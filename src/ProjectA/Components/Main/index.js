@@ -83,62 +83,76 @@ class Main extends Component {
         <Header />
 
         <div className="App-main-container">
-          <p>進度：{percentage}%</p>
-          <Line strokeWidth="4" percent={percentage} />
-          <QuestionCard
-            title={qObj.title}
-            id={qObj.id}
-            code={qObj.code}
-            imageUrl={qObj.imageUrl}
-          />
+          <div className="main-section">
+            <div className="return-icon">
+              <button
+                onClick={() => {
+                  window.history.back();
+                }}
+              >
+                Back
+              </button>
+            </div>
+            <p style={{ marginTop: "60px" }}>進度：{percentage}%</p>
+            <Line strokeWidth="4" percent={percentage} />
+            <QuestionCard
+              title={qObj.title}
+              id={qObj.id}
+              code={qObj.code}
+              imageUrl={qObj.imageUrl}
+            />
 
-          <div className="answers">
-            <ul>
-              {qObj.answerArray.map((answerObj, i) => (
-                <AnswerCard
-                  key={answerObj.answer}
-                  answerIndex={i}
-                  answerObj={answerObj}
-                  id={qObj.id}
-                  answered={answerStatus[index].isAnswered}
-                  answer={answerStatus[index].answer}
-                />
-              ))}
-            </ul>
+            <div className="answers">
+              <ul>
+                {qObj.answerArray.map((answerObj, i) => (
+                  <AnswerCard
+                    key={answerObj.answer}
+                    answerIndex={i}
+                    answerObj={answerObj}
+                    id={qObj.id}
+                    answered={answerStatus[index].isAnswered}
+                    answer={answerStatus[index].answer}
+                  />
+                ))}
+              </ul>
+            </div>
+            <div className="progress-control">
+              <div>
+                <button
+                  onClick={() => this.markButtonHandler(qObj.id)}
+                  style={
+                    answerStatus[qObj.id].isMarked ? { color: "orange" } : null
+                  }
+                >
+                  <FontAwesomeIcon icon={faStar} size="lg" />
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={this.backButtonHandler}
+                  disabled={qObj.id === 0}
+                >
+                  <FontAwesomeIcon icon={faArrowCircleLeft} size="lg" />
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={this.nextButtonHandler}
+                  disabled={index === total - 1}
+                >
+                  <FontAwesomeIcon icon={faArrowCircleRight} size="lg" />
+                </button>
+              </div>
+              <div>
+                <button onClick={this.indexButtonHanlder}>
+                  <FontAwesomeIcon icon={faListAlt} size="lg" />
+                </button>
+              </div>
+            </div>
+            {answerStatus[qObj.id].isAnswered ? (
+              <AnalysisCard explain={qObj.explain} />
+            ) : null}
           </div>
-          <div className="progress-control">
-            <div>
-              <button
-                onClick={() => this.markButtonHandler(qObj.id)}
-                style={
-                  answerStatus[qObj.id].isMarked ? { color: "orange" } : null
-                }
-              >
-                <FontAwesomeIcon icon={faStar} size="lg" />
-              </button>
-            </div>
-            <div>
-              <button onClick={this.backButtonHandler} disabled={qObj.id === 0}>
-                <FontAwesomeIcon icon={faArrowCircleLeft} size="lg" />
-              </button>
-            </div>
-            <div>
-              <button
-                onClick={this.nextButtonHandler}
-                disabled={index === total - 1}
-              >
-                <FontAwesomeIcon icon={faArrowCircleRight} size="lg" />
-              </button>
-            </div>
-            <div>
-              <button onClick={this.indexButtonHanlder}>
-                <FontAwesomeIcon icon={faListAlt} size="lg" />
-              </button>
-            </div>
-          </div>
-          {answerStatus[qObj.id].isAnswered ? (
-            <AnalysisCard explain={qObj.explain} />
-          ) : null}
         </div>
       </div>
     ) : null;

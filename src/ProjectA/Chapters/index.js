@@ -1,25 +1,34 @@
 import React from "react";
-// import { Link } from "@reach/router";
+import { Link } from "@reach/router";
 import logo from "../../java-awesome.svg";
 import ChapterList from "./Components/ChapterList";
 import study from "../../study.svg";
-import returnButton from "../../Retun-arrow.svg";
 
 const Chapters = () => {
   return (
     <div className="chapters">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Link to="/">
+          <img src={logo} className="App-logo" alt="logo" />
+        </Link>
       </header>
-      <div className="return-icon">
-        <img src={returnButton} alt="return button" />
+      <div className="chapter-main-section">
+        <div className="return-icon">
+          <button
+            onClick={() => {
+              window.history.back();
+            }}
+          >
+            Back
+          </button>
+        </div>
+        <div className="cate-imagebox">
+          <img src={study} alt="study" />
+        </div>
+        <section className="chapter-section">
+          <ChapterList />
+        </section>
       </div>
-      <div className="cate-imagebox">
-        <img src={study} alt="study" />
-      </div>
-      <section className="chapter-section">
-        <ChapterList />
-      </section>
     </div>
   );
 };

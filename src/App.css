@@ -24,6 +24,17 @@
     width: 360px;
 }
 
+.main-section {
+    position: relative;
+}
+
+.main-section .return-icon {
+    width: 48px;
+    position: absolute;
+    top: -50px;
+    left: -10px;
+}
+
 .question-card {
     font-family: "Lato", sans-serif;
     padding: 10px 0;
@@ -57,7 +68,7 @@
 .answers ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -274,6 +285,10 @@ pre {
     padding-bottom: 50px;
 }
 
+.landing-main-section {
+    position: relative;
+}
+
 .hero {
     width: 360px;
     height: 200px;
@@ -281,7 +296,7 @@ pre {
     margin: 0 auto;
     z-index: 1;
     position: absolute;
-    top: 32%;
+    top: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -290,7 +305,8 @@ pre {
 
 .button-section {
     width: 360px;
-    margin: 200px auto;
+    margin: 0 auto;
+    margin-top: 200px;
     text-align: center;
 }
 
@@ -380,9 +396,11 @@ pre {
         opacity: 0;
         transform: translateX(-10rem);
     }
+
     80% {
         transform: translateX(1rem);
     }
+
     100% {
         opacity: 1;
         transform: translate(0);
@@ -394,9 +412,11 @@ pre {
         opacity: 0;
         transform: translateX(10rem);
     }
+
     80% {
         transform: translateX(-1rem);
     }
+
     100% {
         opacity: 1;
         transform: translate(0);
@@ -409,6 +429,7 @@ pre {
     height: 100vh;
     position: relative;
     font-family: "Ubuntu", sans-serif;
+
 }
 
 .categoreis-background {
@@ -420,12 +441,28 @@ pre {
     margin: 40px auto;
 }
 
+.categories-main-section {
+    position: relative;
+    width: 360px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
 .return-icon {
     width: 48px;
-    height: 48px;
     position: absolute;
-    top: 120px;
-    right: 27px;
+    top: -20px;
+    left: 0px;
+}
+
+.return-icon button {
+    display: block;
+    padding: 6px 12px;
+    font-size: 20px;
+    border: transparent;
+    background-color: transparent;
+    color: #0084da
 }
 
 .categories-textbox {
@@ -483,7 +520,7 @@ pre {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    background-image: linear-gradient( 120deg, transparent 0%, transparent 50%, white 50%);
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
     background-size: 220%;
     transition: all 0.4s;
     margin: 0;
@@ -509,10 +546,24 @@ pre {
     font-family: "Ubuntu", sans-serif;
 }
 
+
+.chapter-main-section {
+    position: relative;
+    width: 360px;
+    margin: 0 auto;
+}
+
+.chapter-main-section .return-icon {
+    width: 48px;
+    position: absolute;
+    top: -40px;
+    left: 0px;
+}
+
 .cate-imagebox {
     width: 60px;
     position: absolute;
-    top: 25%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
