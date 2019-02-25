@@ -34,13 +34,13 @@ const Categories = () => {
           <div className="navigation">
             <ul className="navigation__list">
               <li className="navigation__item">
-                <Link to="/chapters" className="navigation__link">
+                <Link to="/chapters/OCA" className="navigation__link">
                   OCA-808
                 </Link>
               </li>
               <li className="navigation__item">
-                <Link to="/chapters" className="navigation__link">
-                  OCA-809
+                <Link to="/chapters/OCP" className="navigation__link">
+                  OCP-809
                 </Link>
               </li>
             </ul>

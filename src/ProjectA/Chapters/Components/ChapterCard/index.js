@@ -76,7 +76,7 @@ class ChapterCard extends Component {
   };
 
   clickHandler = id => {
-    navigate("/main");
+    navigate(`/main/${id}`);
   };
 
   render() {

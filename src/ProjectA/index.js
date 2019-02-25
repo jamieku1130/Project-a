@@ -12,8 +12,8 @@ const App = () => (
     <Router>
       <Landing path="/" />
       <Categories path="/categories" />
-      <Chapters path="/chapters" />
-      <Main path="/main" />
+      <Chapters path="/chapters/:cert" />
+      <Main path="/main/:id" />
     </Router>
   </Provider>
 );

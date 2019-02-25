@@ -15,24 +15,7 @@ import AnswerCard from "../AnswerCard";
 import List from "../List";
 import Header from "../Header";
 import "../../../App.css";
-
-// const mapStateToProps = state => ({
-//     quizs: state.quizs,
-//     answerStatus: state.answerStatus,
-//     index: state.index,
-//     total: state.total,
-//     score: state.score
-//     percentage:state.percentage
-//   });
-
-//   const mapDispatchToProps = {
-//     getQuizs,
-//     nextQuiz,
-//     backQuiz,
-//     markQuiz,
-//     jumpToQuiz,
-//     resetState
-//   };
+import helpFunction from "../../quizsData/helperFunction";
 
 class Main extends Component {
   scroll = Scroll.animateScroll;
@@ -45,7 +28,9 @@ class Main extends Component {
     // event.stopPropagation();
   };
   componentDidMount = () => {
-    const quizs = require("../../quizsData/oca/ch2/oca-ch2-quizData").default;
+    // console.log(quizs);
+    //const quizs = require("../../quizsData/oca/ch2/oca-ch2-quizData").default;
+    const quizs = helpFunction(this.props.id);
     this.props.getQuizs(quizs);
   };
   componentWillUnmount = () => {

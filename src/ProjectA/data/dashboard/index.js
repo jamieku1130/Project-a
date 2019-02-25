@@ -26,7 +26,8 @@ export const ocpChapterTitles = [
 ];
 
 const initialState = {
-  selectedCertification: "OCA",
+  selectedCertification: "",
+  selectedChapter: "",
   ocaProgress: ocaChapterTitles.map((ch, i) => ({
     title: ch,
     percentage: 0,
@@ -35,7 +36,7 @@ const initialState = {
   ocpProgress: ocpChapterTitles.map((ch, i) => ({
     title: ch,
     percentage: 0,
-    course_ID: i + 10
+    course_ID: i + 11
   }))
 };
 

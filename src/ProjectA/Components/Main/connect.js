@@ -12,7 +12,8 @@ const mapStateToProps = state => ({
   index: state.app.index,
   total: state.app.total,
   score: state.app.score,
-  percentage: state.app.percentage
+  percentage: state.app.percentage,
+  cert: state.dashboard.selectedCertification
 });
 
 const mapDispatchToProps = {
