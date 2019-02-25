@@ -1,6 +1,7 @@
 import React from "react";
 // import { Link } from "@reach/router";
 import logo from "../../java-awesome.svg";
+import returnButton from "../../Retun-arrow.svg";
 
 const Categories = () => {
   return (
@@ -8,6 +9,9 @@ const Categories = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <div className="return-icon">
+        <img src={returnButton} alt="return button" />
+      </div>
       <div className="categories-textbox">
         <div className="textbox">
           <h2>OCA</h2>

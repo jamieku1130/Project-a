@@ -4,7 +4,8 @@ const initialState = {
   index: 0,
   total: 0,
   score: 0,
-  percentage: 0
+  percentage: 0,
+  quizsTitle: ""
 };
 
 const initialAnswerState = {
