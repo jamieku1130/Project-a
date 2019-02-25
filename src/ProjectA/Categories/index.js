@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "@reach/router";
+import { Link } from "@reach/router";
 import logo from "../../java-awesome.svg";
 import returnButton from "../../Retun-arrow.svg";
 
@@ -26,14 +26,14 @@ const Categories = () => {
         <div className="navigation">
           <ul className="navigation__list">
             <li className="navigation__item">
-              <a href="/" className="navigation__link">
+              <Link to="/chapters" className="navigation__link">
                 OCA-808
-              </a>
+              </Link>
             </li>
             <li className="navigation__item">
-              <a href="/" className="navigation__link">
+              <Link to="/chapters" className="navigation__link">
                 OCA-809
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

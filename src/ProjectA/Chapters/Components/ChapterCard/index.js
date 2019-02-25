@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { navigate } from "@reach/router";
 import styled from "styled-components";
 import { Circle } from "rc-progress";
 
@@ -74,7 +75,9 @@ class ChapterCard extends Component {
     });
   };
 
-  clickHandler = id => {};
+  clickHandler = id => {
+    navigate("/main");
+  };
 
   render() {
     const { title, percentage, course_ID } = this.props;

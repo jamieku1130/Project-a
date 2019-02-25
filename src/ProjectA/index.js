@@ -1,4 +1,5 @@
 import React from "react";
+import { Router } from "@reach/router";
 import { Provider } from "react-redux";
 import store from "./data/createStore";
 import Main from "./Components/Main";
@@ -8,10 +9,12 @@ import Chapters from "./Chapters";
 
 const App = () => (
   <Provider store={store}>
-    <Landing />
-    <Categories />
-    <Chapters />
-    <Main />
+    <Router>
+      <Landing path="/" />
+      <Categories path="/categories" />
+      <Chapters path="/chapters" />
+      <Main path="/main" />
+    </Router>
   </Provider>
 );
 
