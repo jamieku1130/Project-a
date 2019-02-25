@@ -5,7 +5,8 @@ const initialState = {
   total: 0,
   score: 0,
   percentage: 0,
-  quizsTitle: ""
+  quizsTitle: "",
+  course_id: 0
 };
 
 const initialAnswerState = {

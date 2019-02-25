@@ -2,13 +2,15 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import { createLogger } from "redux-logger";
 import reducer from "./appState";
 import filterReducer from "./setVisibility";
+import dashboard from "./dashboard";
 
 const initialState = {};
 const logger = createLogger();
 
 const rootReducer = combineReducers({
   app: reducer,
-  visibilityFilter: filterReducer
+  visibilityFilter: filterReducer,
+  dashboard: dashboard
 });
 
 const composeEnhancers =

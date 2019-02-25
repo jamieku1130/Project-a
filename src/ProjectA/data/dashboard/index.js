@@ -25,20 +25,63 @@ export const ocpChapterTitles = [
   "Localization"
 ];
 
-// const selectedAction = ["REVIEW", "EXAM"];
-
-const initialAnswerState = {
-  selectedTitle: "",
+const initialState = {
+  selectedCertification: "OCA",
   ocaProgress: ocaChapterTitles.map((ch, i) => ({
     title: ch,
     percentage: 0,
-    id: i
+    course_ID: i + 1
   })),
   ocpProgress: ocpChapterTitles.map((ch, i) => ({
     title: ch,
     percentage: 0,
-    id: i
+    course_ID: i + 10
   }))
 };
 
 const createActionWithName = name => `app/tasks/${name}`;
+
+export default function reducer(state = initialState, action = {}) {
+  switch (action.type) {
+    case UPDATE_PERCENTAGE:
+      if (action.id < 10) {
+        const updateOcaProgress = state.ocaProgress.map(obj =>
+          obj.course_ID === action.id
+            ? { ...obj, percentage: action.value }
+            : obj
+        );
+        return { ...state, ocaProgress: updateOcaProgress };
+      } else {
+        const updateOcpProgress = state.ocpProgress.map(obj =>
+          obj.course_ID === action.id
+            ? { ...obj, percentage: action.value }
+            : obj
+        );
+        return { ...state, ocpProgress: updateOcpProgress };
+      }
+    case UPDATE_CERTIFICATION:
+      return { ...state, selectedCertification: action.text };
+    default:
+      return state;
+  }
+}
+
+export const UPDATE_PERCENTAGE = createActionWithName("UPDATE_PERCENTAGE");
+export const UPDATE_CERTIFICATION = createActionWithName(
+  "UPDATE_CERTIFICATION"
+);
+
+export const updatePercentage = (id, value) => {
+  return {
+    type: UPDATE_PERCENTAGE,
+    id,
+    value
+  };
+};
+
+export const updateCertification = text => {
+  return {
+    type: UPDATE_CERTIFICATION,
+    text
+  };
+};
