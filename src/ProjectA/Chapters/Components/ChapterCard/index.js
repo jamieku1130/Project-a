@@ -18,6 +18,10 @@ const Card = styled.div`
   &:hover {
     transform: scaleX(1.1);
   }
+  @media (min-width: 768px) {
+    width: 560px;
+    grid-template-columns: 480px 80px;
+  }
 `;
 const TextBox = styled.div`
   display: flex;

@@ -3,7 +3,7 @@ import Link from "../Link";
 import { VisibilityFilters } from "../../data/setVisibility";
 
 const Footer = () => (
-  <div>
+  <div className="link-control">
     <span>Show: </span>
     <Link filter={VisibilityFilters.SHOW_ALL}>全部</Link>
     <Link filter={VisibilityFilters.SHOW_IMCOMPLETED}>未完成</Link>
