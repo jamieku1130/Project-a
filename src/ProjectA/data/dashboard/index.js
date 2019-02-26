@@ -31,12 +31,14 @@ const initialState = {
   ocaProgress: ocaChapterTitles.map((ch, i) => ({
     title: ch,
     percentage: 0,
-    course_ID: i + 1
+    course_ID: i + 1,
+    answerState: null
   })),
   ocpProgress: ocpChapterTitles.map((ch, i) => ({
     title: ch,
     percentage: 0,
-    course_ID: i + 11
+    course_ID: i + 11,
+    answerState: null
   }))
 };
 
@@ -44,6 +46,25 @@ const createActionWithName = name => `app/tasks/${name}`;
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
+    case UPDATE_ANSWERSTATE:
+      if (action.id < 10) {
+        const updatedOcaProgress = state.ocaProgress.map(obj =>
+          obj.course_ID === parseInt(action.id)
+            ? { ...obj, answerState: action.answerState }
+            : obj
+        );
+
+        return { ...state, ocaProgress: updatedOcaProgress };
+      } else {
+        const updatedOcpProgress = state.ocpProgress.map(obj =>
+          obj.course_ID === parseInt(action.id)
+            ? { ...obj, answerState: action.answerState }
+            : obj
+        );
+
+        return { ...state, ocpProgress: updatedOcpProgress };
+      }
+
     case UPDATE_PERCENTAGE:
       if (action.id < 10) {
         const updateOcaProgress = state.ocaProgress.map(obj =>
@@ -72,6 +93,8 @@ export const UPDATE_CERTIFICATION = createActionWithName(
   "UPDATE_CERTIFICATION"
 );
 
+export const UPDATE_ANSWERSTATE = createActionWithName("UPDATE_ANSWERSTATE");
+
 export const updatePercentage = (id, value) => {
   return {
     type: UPDATE_PERCENTAGE,
@@ -84,5 +107,13 @@ export const updateCertification = text => {
   return {
     type: UPDATE_CERTIFICATION,
     text
+  };
+};
+
+export const updateAnswerState = (id, answerState) => {
+  return {
+    type: UPDATE_ANSWERSTATE,
+    id,
+    answerState
   };
 };

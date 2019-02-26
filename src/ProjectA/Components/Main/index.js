@@ -20,7 +20,8 @@ import helpFunction from "../../quizsData/helperFunction";
 class Main extends Component {
   scroll = Scroll.animateScroll;
   state = {
-    visible: false
+    visible: false,
+    title: ""
   };
 
   dismissHandler = event => {
@@ -28,12 +29,25 @@ class Main extends Component {
     // event.stopPropagation();
   };
   componentDidMount = () => {
-    // console.log(quizs);
-    //const quizs = require("../../quizsData/oca/ch2/oca-ch2-quizData").default;
-    const quizs = helpFunction(this.props.id);
-    this.props.getQuizs(quizs);
+    const { id, ocaProgress, ocpProgress } = this.props;
+    const quizs = helpFunction(id); //this.props.id is from router path="/main:id"
+    let answerState;
+    if (id < 10) {
+      answerState = ocaProgress[id - 1].answerState;
+      this.setState({
+        title: ocaProgress[id - 1].title
+      });
+    } else {
+      answerState = ocpProgress[id - 11].answerState;
+      this.setState({
+        title: ocpProgress[id - 11].title
+      });
+    }
+    this.props.getQuizs(quizs, answerState);
   };
   componentWillUnmount = () => {
+    const { id, answerStatus } = this.props;
+    this.props.updateAnswerState(id, answerStatus);
     this.props.resetState();
   };
 
@@ -78,7 +92,8 @@ class Main extends Component {
                 Back
               </button>
             </div>
-            <p style={{ marginTop: "60px" }}>進度：{percentage}%</p>
+            <h1 style={{ textAlign: "center" }}>{this.state.title}</h1>
+            <p style={{ marginTop: "10px" }}>進度：{percentage}%</p>
             <Line strokeWidth="4" percent={percentage} />
             <QuestionCard
               title={qObj.title}

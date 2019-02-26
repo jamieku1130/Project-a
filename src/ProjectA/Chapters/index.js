@@ -7,7 +7,6 @@ import study from "../../study.svg";
 
 class Chapters extends Component {
   componentDidMount = () => {
-    console.log(this.props.cert);
     this.props.updateCertification(this.props.cert);
   };
 

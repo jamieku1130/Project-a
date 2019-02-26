@@ -19,18 +19,35 @@ const initialAnswerState = {
 //array.reduce((obj,elem)=> { return {...obj,[elem.id]:{isAnswered:false,isMarked:false,score:false}}},{})
 const createActionWithName = name => `app/tasks/${name}`;
 
+const calculatePercentage = obj => {
+  let totoalAnswered = 0;
+  const keys = Object.keys(obj);
+  for (const key of keys) {
+    if (obj[key].isAnswered) {
+      totoalAnswered += 1;
+    }
+  }
+  return totoalAnswered;
+};
+
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case GET_QUIZS:
-      const initState = action.quizs.reduce((obj, quiz) => {
-        return { ...obj, [quiz.id]: initialAnswerState };
-      }, {});
+      const initState =
+        action.answerState ||
+        action.quizs.reduce((obj, quiz) => {
+          return { ...obj, [quiz.id]: initialAnswerState };
+        }, {});
+
+      const percentage =
+        (calculatePercentage(initState) / action.quizs.length) * 100;
 
       return {
         ...state,
         quizs: action.quizs,
         total: action.quizs.length,
-        answerStatus: initState
+        answerStatus: initState,
+        percentage
       };
 
     case NEXT_QUIZ:
@@ -68,9 +85,12 @@ export default function reducer(state = initialState, action = {}) {
         scored: action.validate,
         answer: action.index
       };
+
+      const totoalAnswered = calculatePercentage(state.answerStatus);
+
       return {
         ...state,
-        percentage: state.percentage + (1 / state.total) * 100,
+        percentage: ((totoalAnswered + 1) / state.total) * 100,
         answerStatus: {
           ...state.answerStatus,
           [action.id]: updatedanswerStatusByAnswered
@@ -96,10 +116,11 @@ export const MARK_QUIZ = createActionWithName("MARK_QUIZ");
 export const JUMP_TO_QUIZ = createActionWithName("JUMP_TO_QUIZ");
 export const RESET_STATE = createActionWithName("RESET_STATE");
 
-export const getQuizs = quizs => {
+export const getQuizs = (quizs, answerState) => {
   return {
     type: GET_QUIZS,
-    quizs
+    quizs,
+    answerState
   };
 };
 
