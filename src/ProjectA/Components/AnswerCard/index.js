@@ -2,8 +2,6 @@ import React from "react";
 import Scroll from "react-scroll";
 import connect from "./connect";
 
-//const AnswerCard = ({ AnswerIndex,answerObj,id, answerQuiz }) => {
-
 const firstLetterArray = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 class AnswerCard extends React.Component {

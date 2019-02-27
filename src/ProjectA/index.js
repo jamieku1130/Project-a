@@ -6,14 +6,16 @@ import Main from "./Components/Main";
 import Landing from "./Landing";
 import Categories from "./Categories";
 import Chapters from "./Chapters";
+import Exam from "./Components/Exam";
 
 const App = () => (
   <Provider store={store}>
     <Router>
       <Landing path="/" />
-      <Categories path="/categories" />
+      <Categories path="/categories/:process" />
       <Chapters path="/chapters/:cert" />
       <Main path="/main/:id" />
+      <Exam path="/exam/:id" />
     </Router>
   </Provider>
 );

@@ -57,6 +57,12 @@ export default function(id) {
     case "22":
       return require("./ocp/ch22/ocp-ch22-quizData").default;
 
+    case "OCA":
+      return require("./oca/ch10/oca-ch10-quizData").default;
+
+    case "OCP":
+      return require("./ocp/ch23/ocp-ch23-quizData").default;
+
     default:
       break;
   }

@@ -33,11 +33,16 @@ const Landing = () => {
           </p>
           <button
             className="landing-button"
-            onClick={() => navigate("/categories")}
+            onClick={e => navigate(`/categories/REVIEW`)}
           >
             REVIEW
           </button>
-          <button className="landing-button">EXAM</button>
+          <button
+            className="landing-button"
+            onClick={e => navigate(`/categories/EXAM`)}
+          >
+            EXAM
+          </button>
         </section>
       </div>
     </div>
