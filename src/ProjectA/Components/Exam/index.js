@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { Line } from "rc-progress";
 import connect from "./connect";
 import QuestionCard from "../QuestionCard";
-import AnswerCard from "../AnswerCard";
+import ExamAnswerCard from "../ExamAnswerCard";
 import Header from "../Header";
 import "../../../App.css";
 import helpFunction from "../../quizsData/helperFunction";
+import Timer from "../CountDownTimer";
 
 class Exam extends Component {
   componentDidMount = () => {
@@ -29,18 +30,25 @@ class Exam extends Component {
         <Header />
         <div className="App-main-container">
           <div className="main-section">
-            <div className="return-icon">
-              <button
-                onClick={() => {
-                  window.history.back();
-                }}
-              >
-                Back
-              </button>
+            <div className="status-bar">
+              <div className="back-icon ">
+                <button
+                  onClick={() => {
+                    window.history.back();
+                  }}
+                >
+                  Back
+                </button>
+              </div>
+              <div className="timer-comp">
+                <Timer />
+              </div>
             </div>
+
             <h1 style={{ textAlign: "center" }}>
               {this.props.id === "OCA" ? "OCA" : "OCP"}
             </h1>
+
             <p style={{ marginTop: "10px" }}>進度：{percentage}%</p>
             <Line strokeWidth="4" percent={percentage} />
             <QuestionCard
@@ -53,7 +61,7 @@ class Exam extends Component {
             <div className="answers">
               <ul>
                 {qObj.answerArray.map((answerObj, i) => (
-                  <AnswerCard
+                  <ExamAnswerCard
                     key={answerObj.answer}
                     answerIndex={i}
                     answerObj={answerObj}

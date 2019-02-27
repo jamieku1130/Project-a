@@ -28,6 +28,22 @@
     position: relative;
 }
 
+.status-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-icon button {
+    display: block;
+    font-size: 20px;
+    border: transparent;
+    background-color: transparent;
+    color: #0084da;
+}
+
+
 .main-section .return-icon {
     width: 48px;
     position: absolute;
