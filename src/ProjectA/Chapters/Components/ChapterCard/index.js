@@ -11,6 +11,7 @@ const Card = styled.div`
   border-radius: 5px;
   display: grid;
   grid-template-columns: 200px 80px;
+  cursor:pointer;
 
   border-left: 5px solid ${props => props.inputColor};
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);

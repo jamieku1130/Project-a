@@ -54,15 +54,8 @@
     line-height: 1.6;
 }
 
-.App-footer {
-    background-color: #333;
-    height: 60px;
-    flex-shrink: 0;
-    line-height: 6;
-}
-
-.App-link {
-    color: #61dafb;
+div button {
+    cursor:pointer;
 }
 
 .answers ul {
