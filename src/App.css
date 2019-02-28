@@ -45,7 +45,7 @@
 
 
 .main-section .return-icon {
-    width: 48px;
+    width: 100px;
     position: absolute;
     top: -30px;
     left: -10px;
@@ -458,7 +458,7 @@ pre {
 }
 
 .return-icon {
-    width: 48px;
+    width: 100px;
     position: absolute;
     top: -20px;
     left: 0px;
@@ -494,6 +494,8 @@ pre {
 }
 
 .textbox-exam {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 700;
     border: 1px solid grey;
     border-radius: 10px;
     background-color: #eee;
@@ -573,7 +575,7 @@ pre {
 }
 
 .chapter-main-section .return-icon {
-    width: 48px;
+    width: 100px;
     position: absolute;
     top: -40px;
     left: 0px;

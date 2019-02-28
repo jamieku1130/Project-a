@@ -7,6 +7,7 @@ import Header from "../Header";
 import "../../../App.css";
 import helpFunction from "../../quizsData/helperFunction";
 import Timer from "../CountDownTimer";
+import Back from "../Back";
 
 class Exam extends Component {
   componentDidMount = () => {
@@ -31,24 +32,14 @@ class Exam extends Component {
         <div className="App-main-container">
           <div className="main-section">
             <div className="status-bar">
-              <div className="back-icon ">
-                <button
-                  onClick={() => {
-                    window.history.back();
-                  }}
-                >
-                  Back
-                </button>
-              </div>
+              <Back className="back-icon" />
               <div className="timer-comp">
-                <Timer />
+                <Timer />{" "}
               </div>
             </div>
-
             <h1 style={{ textAlign: "center" }}>
               {this.props.id === "OCA" ? "OCA" : "OCP"}
             </h1>
-
             <p style={{ marginTop: "10px" }}>進度：{percentage}%</p>
             <Line strokeWidth="4" percent={percentage} />
             <QuestionCard

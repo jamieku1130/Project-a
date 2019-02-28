@@ -1,25 +1,15 @@
 import React from "react";
 import { Link } from "@reach/router";
 import logo from "../../java-awesome.svg";
+import Back from "../Components/Back";
+import Header from "../Components/Header";
 
 const Categories = ({ process }) => {
   return (
     <div className="categories">
-      <header className="App-header">
-        <Link to="/">
-          <img src={logo} className="App-logo" alt="logo" />
-        </Link>
-      </header>
+      <Header />
       <div className="categories-main-section">
-        <div className="return-icon">
-          <button
-            onClick={() => {
-              window.history.back();
-            }}
-          >
-            Back
-          </button>
-        </div>
+        <Back className="return-icon" />
         <div className="categories-textbox">
           <div className="textbox">
             <h2>OCA</h2>
@@ -32,7 +22,8 @@ const Categories = ({ process }) => {
           {process === "EXAM" ? (
             <div className="textbox-exam">
               <p>考試時間 150 分鐘, 總共 80 題</p>
-              <p>Are you ready ...</p>
+              <h6>考完後會有成績和題解頁面</h6>
+              <h6>Are you ready ?</h6>
             </div>
           ) : null}
         </div>

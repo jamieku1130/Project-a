@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
 import connect from "./connect";
-import logo from "../../java-awesome.svg";
 import ChapterList from "./Components/ChapterList";
 import study from "../../study.svg";
+import Back from "../Components/Back";
+import Header from "../Components/Header";
 
 class Chapters extends Component {
   componentDidMount = () => {
@@ -13,21 +13,9 @@ class Chapters extends Component {
   render() {
     return (
       <div className="chapters">
-        <header className="App-header">
-          <Link to="/">
-            <img src={logo} className="App-logo" alt="logo" />
-          </Link>
-        </header>
+        <Header />
         <div className="chapter-main-section">
-          <div className="return-icon">
-            <button
-              onClick={() => {
-                window.history.back();
-              }}
-            >
-              Back
-            </button>
-          </div>
+          <Back className="return-icon" />
           <div className="cate-imagebox">
             <img src={study} alt="study" />
           </div>

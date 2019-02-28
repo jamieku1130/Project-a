@@ -59,8 +59,9 @@ class App extends Component {
   componentDidMount = () => {
     this.tick();
   };
-  componentWillMount = () => {
+  componentWillUnmount = () => {
     this.handleStop();
+    // when leave the exam , should provide the elapsed time;
   };
 
   handleStart = () => {
@@ -71,6 +72,7 @@ class App extends Component {
     if (this.state.running) {
       this.timer = setInterval(() => {
         const newCount = this.state.count - 1;
+        // in here should check if time is running out, and finish the exam, navigate to result page.
         this.setState({ count: newCount });
       }, 1000);
     }

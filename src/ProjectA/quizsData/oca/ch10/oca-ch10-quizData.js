@@ -1048,16 +1048,34 @@ const convertCorrectIndex = string => {
   }
 };
 
-const mapAnswers = (answers, string) => {
-  const correctIndex = convertCorrectIndex(string);
+const convertCorrectIndexToArray = string =>
+  string
+    .split(".")[0]
+    .split(", ")
+    .map(e => convertCorrectIndex(e));
+
+// const mapAnswers = (answers, string) => {
+//   const correctIndex = convertCorrectIndex(string);
+//   if (!Array.isArray(answers)) {
+//     return;
+//   }
+//   return answers.map((answer, index) => {
+//     return {
+//       answer,
+//       isCorrect: index === correctIndex
+//     };
+//   });
+// };
+
+const mapAnswersForArray = (answers, string) => {
+  const correctIndexArr = convertCorrectIndexToArray(string);
   if (!Array.isArray(answers)) {
-    console.log(answers);
     return;
   }
   return answers.map((answer, index) => {
     return {
       answer,
-      isCorrect: index === correctIndex
+      isCorrect: correctIndexArr.includes(index)
     };
   });
 };
@@ -1068,7 +1086,8 @@ const quizs = qzString.map((qz, index) => {
     title: qz["title"],
     code: qz["code"],
     imageUrl: null,
-    answerArray: mapAnswers(qz["answers"], a10[index]),
+    answerArray: mapAnswersForArray(qz["answers"], a10[index]),
+    answersIntArray: convertCorrectIndexToArray(a10[index]),
     explain: a10[index]
   };
 });

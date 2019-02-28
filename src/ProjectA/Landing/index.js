@@ -28,7 +28,7 @@ const Landing = () => {
 
         <section className="button-section">
           <h2>Have a cup of Java Cafe?</h2>
-          <p>
+          <p style={{ fontFamily: "Noto Sans TC", fontWeight: 700 }}>
             你可以選擇REVIEW覆習各個章節,當你準備好可以直接按EXAM. Good Luck...
           </p>
           <button

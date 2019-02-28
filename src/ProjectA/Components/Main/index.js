@@ -14,6 +14,7 @@ import AnalysisCard from "../AnalysisCard";
 import AnswerCard from "../AnswerCard";
 import List from "../List";
 import Header from "../Header";
+import Back from "../Back";
 import "../../../App.css";
 import helpFunction from "../../quizsData/helperFunction";
 
@@ -83,15 +84,7 @@ class Main extends Component {
 
         <div className="App-main-container">
           <div className="main-section">
-            <div className="return-icon">
-              <button
-                onClick={() => {
-                  window.history.back();
-                }}
-              >
-                Back
-              </button>
-            </div>
+            <Back className="return-icon" />
             <h1 style={{ textAlign: "center" }}>{this.state.title}</h1>
             <p style={{ marginTop: "10px" }}>進度：{percentage}%</p>
             <Line strokeWidth="4" percent={percentage} />
