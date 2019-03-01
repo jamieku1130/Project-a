@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getQuizs, nextQuiz, resetState } from "../../data/appState";
+import { getQuizs, submitAnswer, resetState } from "../../data/appState";
 const mapStateToProps = state => ({
   quizs: state.app.quizs,
   answerStatus: state.app.answerStatus,
@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getQuizs,
-  nextQuiz,
+  submitAnswer,
   resetState
 };
 

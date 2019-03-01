@@ -1,7 +1,9 @@
 import { connect } from "react-redux";
-import { answerQuiz } from "../../data/appState";
+import { pickUpAnswer } from "../../data/appState";
 
-const mapDispatchToProps = { answerQuiz };
+const mapDispatchToProps = {
+  pickUpAnswer
+};
 
 export default connect(
   null,

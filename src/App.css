@@ -601,6 +601,10 @@ pre {
     cursor: pointer;
 }
 
+.prompt-textbox {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
 /* media query for ipad */
 
 @media only screen and (min-width: 768px) {

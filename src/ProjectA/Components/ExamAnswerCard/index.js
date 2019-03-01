@@ -1,50 +1,31 @@
 import React from "react";
-import Scroll from "react-scroll";
 import connect from "./connect";
-
 const firstLetterArray = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 class ExamAnswerCard extends React.Component {
-  scroll = Scroll.animateScroll;
-  clickedHandler = answerIndex => {
-    const { answerObj, id, answerQuiz, answered } = this.props;
-    if (answered) {
-      return;
-    }
-    answerQuiz(id, answerObj.isCorrect, answerIndex);
-    this.scroll.scrollToBottom();
+  state = {
+    picked: false
+  };
+  clickedHandler = () => {
+    const { answerObj, pickUpAnswer, answerIndex, id } = this.props;
+    pickUpAnswer(answerIndex, answerObj.isCorrect, id);
+    this.setState({
+      picked: !this.state.picked
+    });
   };
 
   render() {
-    const { answerIndex, answerObj, answer } = this.props;
-    if (answer === null) {
-      return (
-        <li onClick={() => this.clickedHandler(answerIndex)}>
-          <span>{firstLetterArray[answerIndex]}</span>
-          <p>{answerObj.answer}</p>
-        </li>
-      );
-    } else if (answerIndex === answer) {
-      return (
-        <li
-          style={
-            answerObj.isCorrect
-              ? { backgroundColor: "#b5e7a0", color: "white" }
-              : { backgroundColor: "#d64161", color: "white" }
-          }
-        >
-          <span>{firstLetterArray[answerIndex]}</span>
-          <p>{answerObj.answer}</p>
-        </li>
-      );
-    } else {
-      return (
-        <li>
-          <span>{firstLetterArray[answerIndex]}</span>
-          <p>{answerObj.answer}</p>
-        </li>
-      );
-    }
+    const { answerIndex, answerObj } = this.props;
+
+    return (
+      <li
+        onClick={this.clickedHandler}
+        style={this.state.picked ? { background: "#C0C0C0" } : null}
+      >
+        <span>{firstLetterArray[answerIndex]}</span>
+        <p>{answerObj.answer}</p>
+      </li>
+    );
   }
 }
 

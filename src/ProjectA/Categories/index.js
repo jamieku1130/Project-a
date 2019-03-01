@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "@reach/router";
-import logo from "../../java-awesome.svg";
 import Back from "../Components/Back";
 import Header from "../Components/Header";
 

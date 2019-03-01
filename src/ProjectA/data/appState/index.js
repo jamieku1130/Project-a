@@ -13,8 +13,7 @@ const initialAnswerState = {
   isAnswered: false,
   isMarked: false,
   scored: false,
-  answer: null,
-  isMultipleAnswered: false
+  answer: null
 };
 //array.reduce((obj,elem)=> { return {...obj,[elem.id]:{isAnswered:false,isMarked:false,score:false}}},{})
 const createActionWithName = name => `app/tasks/${name}`;
@@ -103,6 +102,55 @@ export default function reducer(state = initialState, action = {}) {
     case RESET_STATE:
       return initialState;
 
+    case PICK_UP_ANSWER:
+      let updateAnswer = state.answerStatus[action.id].answer;
+      const obj = {
+        id: action.index,
+        correct: action.isCorrect
+      };
+
+      if (updateAnswer === null) {
+        updateAnswer = [obj];
+      } else if (updateAnswer.some(elem => elem.id === obj.id)) {
+        updateAnswer = updateAnswer.filter(elem => elem.id !== obj.id);
+      } else {
+        updateAnswer.push(obj);
+      }
+
+      const updatedanswerStatusForExamPickupAnswer = {
+        ...state.answerStatus[action.id],
+        answer: updateAnswer
+      };
+      return {
+        ...state,
+        answerStatus: {
+          ...state.answerStatus,
+          [action.id]: updatedanswerStatusForExamPickupAnswer
+        }
+      };
+
+    case SUBMIT_ANSWER:
+      const id = action.id;
+      let submitedAnswer = state.answerStatus[id].answer;
+      const updateScored =
+        submitedAnswer !== null &&
+        submitedAnswer.length === state.quizs[id].answersIntArray.length &&
+        submitedAnswer.reduce((result, obj) => result && obj.correct, true);
+
+      const updatedanswerStatusBySubmitedAnswer = {
+        ...state.answerStatus[id],
+        scored: updateScored
+      };
+      return {
+        ...state,
+        answerStatus: {
+          ...state.answerStatus,
+          [id]: updatedanswerStatusBySubmitedAnswer
+        },
+        index: state.index + 1,
+        score: state.score + (updateScored === true ? 1 : 0)
+      };
+
     default:
       return state;
   }
@@ -115,6 +163,8 @@ export const ANSWER_QUIZ = createActionWithName("ANSWER_QUIZ");
 export const MARK_QUIZ = createActionWithName("MARK_QUIZ");
 export const JUMP_TO_QUIZ = createActionWithName("JUMP_TO_QUIZ");
 export const RESET_STATE = createActionWithName("RESET_STATE");
+export const PICK_UP_ANSWER = createActionWithName("PICK_UP_ANSWER");
+export const SUBMIT_ANSWER = createActionWithName("SUBMIT_ANSWER");
 
 export const getQuizs = (quizs, answerState) => {
   return {
@@ -162,5 +212,21 @@ export const jumpToQuiz = id => {
 export const resetState = () => {
   return {
     type: RESET_STATE
+  };
+};
+//pickUpAnswer(answerIndex, answerObj.isCorrect, id);
+export const pickUpAnswer = (index, isCorrect, id) => {
+  return {
+    type: PICK_UP_ANSWER,
+    index,
+    isCorrect,
+    id
+  };
+};
+
+export const submitAnswer = id => {
+  return {
+    type: SUBMIT_ANSWER,
+    id
   };
 };

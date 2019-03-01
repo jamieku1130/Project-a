@@ -86,7 +86,7 @@ class Main extends Component {
           <div className="main-section">
             <Back className="return-icon" />
             <h1 style={{ textAlign: "center" }}>{this.state.title}</h1>
-            <p style={{ marginTop: "10px" }}>進度：{percentage}%</p>
+            <p style={{ marginTop: "10px" }}>進度：{percentage.toFixed(1)}%</p>
             <Line strokeWidth="4" percent={percentage} />
             <QuestionCard
               title={qObj.title}
