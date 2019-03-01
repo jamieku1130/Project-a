@@ -141,6 +141,7 @@ export default function reducer(state = initialState, action = {}) {
         ...state.answerStatus[id],
         scored: updateScored
       };
+
       return {
         ...state,
         answerStatus: {
@@ -148,7 +149,8 @@ export default function reducer(state = initialState, action = {}) {
           [id]: updatedanswerStatusBySubmitedAnswer
         },
         index: state.index + 1,
-        score: state.score + (updateScored === true ? 1 : 0)
+        score: state.score + (updateScored === true ? 1 : 0),
+        percentage: ((state.index + 1) / state.total) * 100
       };
 
     default:

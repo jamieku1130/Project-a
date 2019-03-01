@@ -7,6 +7,7 @@ import Landing from "./Landing";
 import Categories from "./Categories";
 import Chapters from "./Chapters";
 import Exam from "./Components/Exam";
+import Result from "./Result";
 
 const App = () => (
   <Provider store={store}>
@@ -16,6 +17,7 @@ const App = () => (
       <Chapters path="/chapters/:cert" />
       <Main path="/main/:id" />
       <Exam path="/exam/:id" />
+      <Result path="/result" />
     </Router>
   </Provider>
 );

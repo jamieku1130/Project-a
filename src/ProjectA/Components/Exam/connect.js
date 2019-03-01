@@ -5,7 +5,8 @@ const mapStateToProps = state => ({
   answerStatus: state.app.answerStatus,
   index: state.app.index,
   score: state.app.score,
-  percentage: state.app.percentage
+  percentage: state.app.percentage,
+  total: state.app.total
 });
 
 const mapDispatchToProps = {

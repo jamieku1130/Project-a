@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Line } from "rc-progress";
+import { navigate } from "@reach/router";
 import styled from "styled-components";
 import connect from "./connect";
 import QuestionCard from "../QuestionCard";
@@ -65,6 +66,9 @@ class Exam extends Component {
 
   submitAnswerHandler = id => {
     this.props.submitAnswer(id);
+    if (this.props.index === this.props.total - 1) {
+      navigate(`/result`);
+    }
   };
 
   onToggleTimer = () => {
@@ -124,7 +128,7 @@ class Exam extends Component {
               {qObj.answersIntArray.length === 1 ? (
                 <h2>單選題</h2>
               ) : (
-                <h2>{`複選題 可選 ${qObj.answersIntArray.length}`} 題</h2>
+                <h2>{`複選題 可選 ${qObj.answersIntArray.length}`} 個答案</h2>
               )}
             </div>
 
@@ -132,7 +136,7 @@ class Exam extends Component {
               <ul>
                 {qObj.answerArray.map((answerObj, i) => (
                   <ExamAnswerCard
-                    key={answerObj.answer}
+                    key={answerObj.answer + i}
                     answerIndex={i}
                     answerObj={answerObj}
                     id={qObj.id}

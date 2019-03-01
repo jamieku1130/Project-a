@@ -217,10 +217,10 @@ const qzString = [
     code:
       '<code>class Runner {</code>\n<code>   private int numberMinutes;</code>\n<code>   public Runner(int n) {</code>\n<code>      numberMinutes = n;</code>\n<code>   }</code>\n<code><span epub:type="pagebreak" id="Page_395"></span>   public int getNumberMinutes() {</code>\n<code>      return numberMinutes;</code>\n<code>   }</code>\n<code>}</code>\n<code>public class Marathon {</code>\n<code>   public static void main(String[] args) {</code>\n<code>      Stream&lt;Runner&gt; runners = Stream.of(new Runner(183),</code>\n<code>         new Runner(161), new Runner(201));</code>\n<code>      OptionalInt opt = runners.____________________;</code>\n<code>   }</code>\n<code>}</code>',
     answers: [
-      "map(Runner::getNumberMinutes)\n\n       .peek(System.out::println).max()\n",
-      "mapToInt(Runner::getNumberMinutes)\n\n       .peek(System.out::println).max()\n",
-      "peek(System.out::println)\n\n       .mapToInt(Runner::getNumberMinutes).max()\n",
-      "peek(System.out::println)\n\n       .mapToInt(Runner::getNumberMinutes).max()\n",
+      "map(Runner::getNumberMinutes) .peek(System.out::println) .max()",
+      "mapToInt(Runner::getNumberMinutes) .peek(System.out::println) .max()",
+      "peek(System.out::println) .mapToInt(Runner::getNumberMinutes) .max()",
+      "peek(System.out::println) .mapToInt(Runner::getNumberMinutes) .max()",
       "None of the above"
     ]
   },
@@ -450,12 +450,12 @@ const qzString = [
     code:
       '<code>11: Path x = Paths.get(".","song","..","/note");</code>\n<code>12: Path y = Paths.get("/dance/move.txt");</code>\n<code>13: x.normalize();</code>\n<code>14: System.out.println(x.resolve(y));</code>\n<code>15: System.out.println(y.relativize(x));</code>',
     answers: [
-      "/./song/../note/dance/move.txt\n\n/dance/move.txt\n",
-      "/dance/move.txt\n\n/dance/move.txt/./song/../note\n",
-      "/dance/move.txt\n\n/dance/move.txt/note\n",
-      "/note/dance/move.txt\n\n../dance/move.txt/song\n",
-      "The code does not compile.",
-      "The code compiles but an exception is thrown at runtime."
+      " /./song/../note/dance /move.txt/dance/move.txt",
+      " /dance/move.txt/dance /move.txt/./song/../note",
+      " /dance/move.txt/dance /move.txt/note",
+      " /note/dance/move.txt ../dance/move.txt/song",
+      " The code does not compile.",
+      " The code compiles but an exception is thrown at runtime."
     ]
   },
   {

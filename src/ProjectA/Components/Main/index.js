@@ -99,7 +99,7 @@ class Main extends Component {
               <ul>
                 {qObj.answerArray.map((answerObj, i) => (
                   <AnswerCard
-                    key={answerObj.answer}
+                    key={answerObj.answer + i}
                     answerIndex={i}
                     answerObj={answerObj}
                     id={qObj.id}
