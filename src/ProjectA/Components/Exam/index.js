@@ -5,10 +5,11 @@ import connect from "./connect";
 import QuestionCard from "../QuestionCard";
 import ExamAnswerCard from "../ExamAnswerCard";
 import Header from "../Header";
-import "../../../App.css";
-import helpFunction from "../../quizsData/helperFunction";
 import Timer from "../CountDownTimer";
 import Back from "../Back";
+import Modal from "../Modal";
+import helpFunction from "../../quizsData/helperFunction";
+import "../../../App.css";
 
 const SubmitButton = styled.div`
   width: 360px;
@@ -33,32 +34,80 @@ const SubmitButton = styled.div`
 `;
 
 class Exam extends Component {
+  state = {
+    elapsed: 9000,
+    pauseModal: false,
+    backModal: false
+  };
+
+  tick = () => {
+    this.timerId = setInterval(() => {
+      this.setState({
+        elapsed: this.state.elapsed - 1
+      });
+    }, 1000);
+  };
+
+  stopTick = () => {
+    clearInterval(this.timerId);
+  };
+
   componentDidMount = () => {
     const { id } = this.props;
     const quizs = helpFunction(id); //this.props.id is from router path="/main:id"
     this.props.getQuizs(quizs);
+    this.tick();
   };
   componentWillUnmount = () => {
     this.props.resetState();
+    this.stopTick();
   };
 
   submitAnswerHandler = id => {
     this.props.submitAnswer(id);
   };
 
+  onToggleTimer = () => {
+    this.setState({
+      pauseModal: !this.state.pauseModal
+    });
+    this.stopTick();
+  };
+
+  onToggleTimerOn = () => {
+    this.setState({
+      pauseModal: !this.state.pauseModal
+    });
+    this.tick();
+  };
+
+  resumeStart = () => {};
+
+  toggleBack = () => {};
+
+  dismissBack = () => {};
+
   render() {
     const { quizs, index, percentage } = this.props;
     const qObj = quizs[index];
+    const { pauseModal, backModal, elapsed } = this.state;
+    const blur = {
+      backgroundColor: "white",
+      top: 0,
+      left: 0,
+      position: "absolute",
+      width: "100%",
+      height: "100vh",
+      filter: "blur(3px)"
+    };
     return qObj ? (
-      <div className="App">
+      <div className="App" style={pauseModal || backModal ? blur : null}>
         <Header />
         <div className="App-main-container">
           <div className="main-section">
             <div className="status-bar">
               <Back className="back-icon" />
-              <div className="timer-comp">
-                <Timer />{" "}
-              </div>
+              <Timer onToggleTimer={this.onToggleTimer} elapsed={elapsed} />
             </div>
             <h1 style={{ textAlign: "center" }}>
               {this.props.id === "OCA" ? "OCA" : "OCP"}
@@ -96,6 +145,23 @@ class Exam extends Component {
                 SUBMIT ANSWER
               </button>
             </SubmitButton>
+            {this.state.pauseModal ? (
+              <Modal>
+                <h1>注意,正規考試並沒有暫停時間的功能</h1>
+                <div className="timer-resume">
+                  <button onClick={this.onToggleTimerOn}>RESUME</button>
+                </div>
+              </Modal>
+            ) : null}
+            {this.state.backModal ? (
+              <Modal>
+                <h1>現在按 BACK 考試進度將會遺失!!</h1>
+                <div className="back-resume">
+                  <button onClick={this.toggleModal}>繼續考試</button>
+                  <button onClick={this.toggleModal}>離開,下次再來</button>
+                </div>
+              </Modal>
+            ) : null}
           </div>
         </div>
       </div>

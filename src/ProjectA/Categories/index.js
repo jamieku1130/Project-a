@@ -20,7 +20,8 @@ const Categories = ({ process }) => {
           </div>
           {process === "EXAM" ? (
             <div className="textbox-exam">
-              <p>考試時間 150 分鐘, 總共 80 題</p>
+              <p>考試時間 150 分鐘, </p>
+              <p>OCA 80 題, OCP 85題</p>
               <h6>考完後會有成績和題解頁面</h6>
               <h6>Are you ready ?</h6>
             </div>
