@@ -867,6 +867,7 @@ pre {
     display: block;
     margin: 20px auto;
     cursor: pointer;
+    transition: all .5s ease-in-out;
 }
 
 #modal-root .timer-resume button:hover {
@@ -887,6 +888,7 @@ pre {
     display: block;
     margin: 20px auto;
     cursor: pointer;
+    transition: all .5s ease-in-out;
 }
 
 #modal-root .back-resume button:first-child {

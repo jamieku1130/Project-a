@@ -81,11 +81,11 @@ class Exam extends Component {
     this.tick();
   };
 
-  resumeStart = () => {};
-
-  toggleBack = () => {};
-
-  dismissBack = () => {};
+  toggleBack = () => {
+    this.setState({
+      backModal: !this.state.backModal
+    });
+  };
 
   render() {
     const { quizs, index, percentage } = this.props;
@@ -106,7 +106,7 @@ class Exam extends Component {
         <div className="App-main-container">
           <div className="main-section">
             <div className="status-bar">
-              <Back className="back-icon" />
+              <Back className="back-icon" thunk={this.toggleBack} />
               <Timer onToggleTimer={this.onToggleTimer} elapsed={elapsed} />
             </div>
             <h1 style={{ textAlign: "center" }}>
@@ -157,8 +157,14 @@ class Exam extends Component {
               <Modal>
                 <h1>現在按 BACK 考試進度將會遺失!!</h1>
                 <div className="back-resume">
-                  <button onClick={this.toggleModal}>繼續考試</button>
-                  <button onClick={this.toggleModal}>離開,下次再來</button>
+                  <button onClick={this.toggleBack}>繼續考試</button>
+                  <button
+                    onClick={() => {
+                      window.history.back();
+                    }}
+                  >
+                    離開,下次再來
+                  </button>
                 </div>
               </Modal>
             ) : null}
