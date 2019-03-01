@@ -43,6 +43,9 @@ const FlyOutMenu = styled.div`
     color: #0084da;
     margin: 0;
   }
+  & .list-item-color li:nth-child(even) {
+    background: #ccc;
+  }
 `;
 
 const List = ({ visible, dismissHandler, quizs, answerStatus }) => {
@@ -54,7 +57,7 @@ const List = ({ visible, dismissHandler, quizs, answerStatus }) => {
         <div className="list-container">
           <button onClick={dismissHandler}>BACK</button>
 
-          <ul>
+          <ul className="list-item-color">
             {quizs.map((quiz, i) => (
               <ListItem
                 key={quiz.title + i}
