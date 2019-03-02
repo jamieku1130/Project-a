@@ -833,7 +833,7 @@ pre {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 9999;
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;

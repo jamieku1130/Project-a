@@ -60,14 +60,14 @@ class Exam extends Component {
     this.tick();
   };
   componentWillUnmount = () => {
-    this.props.resetState();
+    // this.props.resetState();
     this.stopTick();
   };
 
   submitAnswerHandler = id => {
     this.props.submitAnswer(id);
     if (this.props.index === this.props.total - 1) {
-      navigate(`/result`);
+      navigate(`/result`, { state: { elapsed: this.state.elapsed } });
     }
   };
 
@@ -102,7 +102,7 @@ class Exam extends Component {
       position: "absolute",
       width: "100%",
       height: "100vh",
-      filter: "blur(3px)"
+      filter: "blur(5px)"
     };
     return qObj ? (
       <div className="App" style={pauseModal || backModal ? blur : null}>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Circle } from "rc-progress";
 import connect from "./connect";
 import Header from "../Components/Header";
+import { format } from "../Components/Helper";
 
 const Result = styled.div`
   height: 100vh;
@@ -88,52 +89,69 @@ const PercentageText = styled.p`
   color: white;
 `;
 
-const App = ({ percentage, score, total }) => (
-  <Result>
-    <Header />
-    <div className="main-content">
-      <ScoreContainer>
-        <div className="container-title">
-          <h2>PASS RATE:</h2>
-        </div>
-        <div className="container-graph">
-          <PercentageText>{percentage.toFixed(1)}%</PercentageText>
-          <Circle
-            style={{
-              width: "80%",
-              backgroundColor: "#F49C11",
-              borderRadius: "50%"
-            }}
-            percent={70}
-            strokeWidth="10"
-            strokeColor={`#19b5fe`}
-            gapDegree={70}
-            gapPosition="top"
-          />
-        </div>
-      </ScoreContainer>
-      <ScoreContainer>
-        <div className="container-title">
-          <h2>SUMMARY:</h2>
-        </div>
-        <div className="container-content">
-          <h2>使用時間</h2>
-          <p>1 小時 20分 58秒</p>
-        </div>
-        <div className="container-content">
-          <h2>答對題數</h2>
-          <p>70 of 80</p>
-        </div>
-        <div className="container-content">
-          <h2>測試結果</h2>
-          <p>合格</p>
-        </div>
-        <div className="container-content">
-          <button>檢試考題與答案</button>
-        </div>
-      </ScoreContainer>
-    </div>
-  </Result>
-);
-
+const App = ({ score, total, location }) => {
+  const timeArr = format(9000 - location.state.elapsed)
+    .split(" : ")
+    .map(elem => {
+      if (elem[0] === "0") {
+        return elem[1];
+      } else {
+        return elem;
+      }
+    });
+  const percentage = (score / total) * 100;
+  return (
+    <Result>
+      <Header />
+      <div className="main-content">
+        <ScoreContainer>
+          <div className="container-title">
+            <h2>PASS RATE:</h2>
+          </div>
+          <div className="container-graph">
+            <PercentageText>{percentage.toFixed(1)}%</PercentageText>
+            <Circle
+              style={{
+                width: "80%",
+                backgroundColor: "#F49C11",
+                borderRadius: "50%"
+              }}
+              percent={percentage}
+              strokeWidth="10"
+              strokeColor={percentage > 65 ? `#19b5fe` : `#F45711`}
+              gapDegree={70}
+              gapPosition="top"
+            />
+          </div>
+        </ScoreContainer>
+        <ScoreContainer>
+          <div className="container-title">
+            <h2>SUMMARY:</h2>
+          </div>
+          <div className="container-content">
+            <h2>使用時間</h2>
+            <p>
+              {timeArr[0]} 小時 {timeArr[1]} 分 {timeArr[2]} 秒
+            </p>
+          </div>
+          <div className="container-content">
+            <h2>答對題數</h2>
+            <p>
+              {score} of {total}
+            </p>
+          </div>
+          <div className="container-content">
+            <h2>測試結果</h2>
+            <p style={percentage ? { color: "#19b5fe" } : { color: "#F45711" }}>
+              {percentage > 65 ? " 合格" : "未通過"}
+            </p>
+          </div>
+          <div className="container-content">
+            <button>檢試考題與答案</button>
+          </div>
+        </ScoreContainer>
+      </div>
+    </Result>
+  );
+};
 export default connect(App);
