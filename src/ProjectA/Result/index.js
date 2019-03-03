@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { navigate } from "@reach/router";
 import { Circle } from "rc-progress";
 import connect from "./connect";
 import Header from "../Components/Header";
@@ -69,17 +70,25 @@ const ScoreContainer = styled.div`
       color: white;
       height: 60px;
       font-size: 32px;
-      transition: all 0.5s ease-in-out;
-      :hover {
-        background-color: blue;
-        color: white;
+      animation: changeColor 2s infinite;
+    }
+
+    @keyframes changeColor {
+      0% {
+        background-color: #19b5fe;
+      }
+      50.0% {
+        background-color: #f45711;
+      }
+      100.0% {
+        background-color: #19b5fe;
       }
     }
   }
 `;
 
 const PercentageText = styled.p`
-  font-size: 60px;
+  font-size: 70px;
   font-weight: 700;
   position: absolute;
   z-index: 10;
@@ -142,12 +151,18 @@ const App = ({ score, total, location }) => {
           </div>
           <div className="container-content">
             <h2>測試結果</h2>
-            <p style={percentage ? { color: "#19b5fe" } : { color: "#F45711" }}>
+            <p
+              style={
+                percentage > 65 ? { color: "#19b5fe" } : { color: "#F45711" }
+              }
+            >
               {percentage > 65 ? " 合格" : "未通過"}
             </p>
           </div>
           <div className="container-content">
-            <button>檢試考題與答案</button>
+            <button onClick={() => navigate("/review-exam")}>
+              檢試考題與答案
+            </button>
           </div>
         </ScoreContainer>
       </div>

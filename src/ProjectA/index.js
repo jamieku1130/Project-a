@@ -8,6 +8,7 @@ import Categories from "./Categories";
 import Chapters from "./Chapters";
 import Exam from "./Components/Exam";
 import Result from "./Result";
+import ReviewExam from "./ReviewExam";
 
 const App = () => (
   <Provider store={store}>
@@ -18,6 +19,7 @@ const App = () => (
       <Main path="/main/:id" />
       <Exam path="/exam/:id" />
       <Result path="/result" />
+      <ReviewExam path="/review-exam" />
     </Router>
   </Provider>
 );

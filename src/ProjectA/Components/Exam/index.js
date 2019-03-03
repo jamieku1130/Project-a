@@ -60,7 +60,6 @@ class Exam extends Component {
     this.tick();
   };
   componentWillUnmount = () => {
-    // this.props.resetState();
     this.stopTick();
   };
 
@@ -165,6 +164,7 @@ class Exam extends Component {
                   <button
                     onClick={() => {
                       window.history.back();
+                      this.props.resetState();
                     }}
                   >
                     離開,下次再來
