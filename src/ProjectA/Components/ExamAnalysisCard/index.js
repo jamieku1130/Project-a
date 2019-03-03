@@ -8,12 +8,12 @@ const ExamAnalysisCard = ({ explain }) => {
         {explain
           .split(".")[0]
           .split(", ")
-          .map(char => (
-            <span style={{ marginRight: "5px" }} key={explain}>
+          .map((char, index) => (
+            <span style={{ marginRight: "5px" }} key={index}>
               {char}
             </span>
           ))}
-        {explain.split(".")[1]}
+        {explain.substring(explain.split(".")[0].length, explain.length)}
       </p>
     </div>
   );

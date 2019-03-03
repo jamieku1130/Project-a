@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-
+import { resetState } from "../data/appState";
 const mapStateToProps = state => ({
   quizs: state.app.quizs,
   answerStatus: state.app.answerStatus,
@@ -7,4 +7,11 @@ const mapStateToProps = state => ({
   total: state.app.total
 });
 
-export default connect(mapStateToProps);
+const mapDispatchToProps = {
+  resetState
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+);

@@ -26,16 +26,21 @@ const ExamList = ({ quiz, userAnswer }) => {
         code={quiz.code}
         imageUrl={quiz.imageUrl}
       />
-      <ol type="A">
-        {quiz.answerArray.map((obj, index) => (
-          <li key={obj.answer + index}>{obj.answer}</li>
-        ))}
-      </ol>
-      <p>
-        你(妳)的答案{" "}
-        {parseAnswer(userAnswer.answer && userAnswer.answer.map(obj => obj.id))}
-      </p>
-      <p>正確答案 {parseAnswer(quiz.answersIntArray)}</p>
+      <div className="exam-list">
+        <ol type="A">
+          {quiz.answerArray.map((obj, index) => (
+            <li key={index}>{obj.answer}</li>
+          ))}
+        </ol>
+        <p>
+          你(妳)的答案{" "}
+          {parseAnswer(
+            userAnswer.answer && userAnswer.answer.map(obj => obj.id)
+          )}
+        </p>
+        <p>正確答案 {parseAnswer(quiz.answersIntArray)}</p>
+      </div>
+
       <ExamAnalysisCard explain={quiz.explain} />
     </div>
   ) : null;

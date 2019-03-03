@@ -911,3 +911,69 @@ pre {
     opacity: 0.5;
     cursor: none;
 }
+
+/* pagination */
+
+.pagination {
+    width: 360px;
+    list-style: none;
+    margin: 20px auto;
+    background-color: #50BAE9;
+    color: white;
+    font-size: 12px;
+    font-family: "Ubuntu", sans-serif;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pagination li {
+    padding: 12px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous {
+    width: 60px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.next {
+    width: 60px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li.active {
+    padding: 12px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    color: cornflowerblue;
+}
+
+/* exam-list */
+
+.exam-list {
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.exam-list ol li {
+    margin: 10px;
+}
+
+.exam-list p {
+    margin: 10px;
+}
