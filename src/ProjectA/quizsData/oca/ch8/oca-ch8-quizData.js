@@ -26,7 +26,7 @@ const qzString = [
     title:
       "Which of the following diagrams of java.lang classes shows the inheritance model properly?",
     code: null,
-    answers: ["", "", "", ""]
+    answers: ["1", "2", "3", "4"]
   },
   {
     title:
@@ -135,7 +135,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which keywords are required with a try statement? 1.catch 2.finalize 3.finally",
     code: null,
     answers: [
       "I only",
@@ -353,7 +354,7 @@ const qzString = [
   },
   {
     title:
-      "In the following application, the values of street and city have been omitted. Which one of the following is a possible output of executing this class?",
+      "In the following application, the values of street and city have been omitted. Which one of the following is a possible output of executing this class? 1.350 5th Ave - New York 2.Posted:350 5th Ave - New York",
     code:
       '<code>package registration;</code>\n<code>public class Address {</code>\n<code>   public String getAddress(String street, String city) {</code>\n<code>      try {</code>\n<code>         return street.toString() + " : " + city.toString();</code>\n<code>      } finally {</code>\n<code>         System.out.print("Posted:");</code>\n<code>      }</code>\n<code>   }</code>\n<code>   public static void main(String[] form) {</code>\n<code>      String street = // value omitted</code>\n<code>      String city = // value omitted</code>\n<code>      System.out.print(new Address().getAddress(street,city));</code>\n<code>   }</code>\n<code>}</code>',
     answers: ["I only", "II only", "I and II", "None of the above"]
@@ -631,7 +632,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[2].imageUrl = "./images/image-oca-ch8-3.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
