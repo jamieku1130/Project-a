@@ -65,7 +65,7 @@ const qzString = [
   },
   {
     title:
-      "How many of the following could be valid JDBC URL formats for an imaginary driver named magic and a database named box?",
+      "How many of the following could be valid JDBC URL formats for an imaginary driver named magic and a database named box? 1.jdbc:magic: 127.0.0.1:1234/box 2.jdbc:magic:box 3.jdbc:magic:@127.0.0.1:1234",
     code: null,
     answers: ["None", "One", "Two", "Three"]
   },
@@ -82,7 +82,7 @@ const qzString = [
   },
   {
     title:
-      "Which pair of statements is true when requesting a ResultSet to be both scroll sensitive and updatable?",
+      "Which pair of statements is true when requesting a ResultSet to be both scroll sensitive and updatable? 1.The scroll sensitive option is passed as a parameter before the updatable parameter. 2.The updatable option is passed as a parameter before the scroll sensitive parameter. 3.If these options are not available, the database driver returns a ResultSet with different options. 4.If these options are not available, the database driver throws a SQLException.",
     code: null,
     answers: ["I, III", "I, IV", "II, III", "II, IV"]
   },
@@ -140,7 +140,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which are valid ResultSet types? 1.TYPE_BACKWARD_ONLY 2.TYPE_FORWARD_ONLY 3.TYPE_REVERSE_ONLY",
     code: null,
     answers: ["II", "I and II", "II and III", "None of the above"]
   },
@@ -488,8 +489,8 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
-//   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
-//   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
+quizs[17].imageUrl = "./images/image-ocp-ch21-18.png";
+quizs[24].imageUrl = "./images/image-ocp-ch21-25.png";
+quizs[33].imageUrl = "./images/image-ocp-ch21-34.png";
 
 export default quizs;
