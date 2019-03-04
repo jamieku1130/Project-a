@@ -303,7 +303,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "How many of the following pairs of values can fill in the blanks to comply with the contract of the hashCode() and equals() methods? 1.1, false 2.1, true 3.new Random().nextInt(), false 4.new Random().nextInt(), true",
     code:
       "<code>class Sticker {</code>\n<code>   public int hashCode() {</code>\n<code>      return _____________;</code>\n<code>   }</code>\n<code>   public boolean equals(Object o) {</code>\n<code>      return _____________;</code>\n<code>   }</code>\n<code>}</code>",
     answers: ["None", "One", "Two", "Three"]
@@ -350,7 +351,8 @@ const qzString = [
     answers: ["p", "q", "r", "None of the above"]
   },
   {
-    title: "",
+    title:
+      "Which of the following values can fill in the blank for the class to be correctly implemented? 1.-1 2.5 3.new Random().nextInt()",
     code:
       "<code>class Sticker {</code>\n<code>   public int hashCode(Object o) {</code>\n<code>      return_____________ ;</code>\n<code>   }</code>\n<code>   public boolean equals(Object o) {</code>\n<code>      return true;</code>\n<code>   }</code>\n<code>}</code>",
     answers: ["I", "I and II", "I, II, and III", "I and III"]
@@ -450,7 +452,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[22].imageUrl = "./images/image-ocp-ch11-23.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
