@@ -49,7 +49,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which correctly fills in the blank to print 2017-01-15? (1)f.format(hatDay)(2)f.formatDate(hatDay)(3)hatDay.format(f)",
     code:
       "<code>LocalDate hatDay = LocalDate.of(2017, Month.JANUARY, 15);</code>\n<code>DateTimeFormatter f = DateTimeFormatter.ISO_DATE;</code>\n<code>System.out.println(_______________________);</code>",
     answers: ["I", "III", "I and III", "II and III"]
@@ -272,9 +273,9 @@ const qzString = [
     title: "Which of these represents the earliest date/time?",
     code: null,
     answers: [
-      "2017-02-15T16:00+07:00[Asia/Bangkok]",
-      "2017-02-15T18:00+04:00[Asia/Dubai]",
-      "2017-02-15T20:00+08:00[Asia/Kuala_Lumpur]",
+      "2017-02-15T16:00+07:00 [Asia/Bangkok]",
+      "2017-02-15T18:00+04:00 [Asia/Dubai]",
+      "2017-02-15T20:00+08:00 [Asia/Kuala_Lumpur]",
       "None of the above. We have a tie."
     ]
   },
@@ -459,7 +460,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[24].imageUrl = "./images/image-ocp-ch17-25.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 

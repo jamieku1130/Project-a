@@ -15,7 +15,7 @@ const BallStyle = styled.div`
   font-size: 10px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
   &:hover {
     transform: scale(1.1);
     color: goldenrod;
