@@ -1,6 +1,7 @@
 const qzString = [
   {
-    title: "",
+    title:
+      "Which of the following can fill in the blank to make the code compile?1.?2.News3.Object",
     code: "<code>public class News&lt;________&gt; {}</code>",
     answers: ["None of them", "I", "II and III", "I, II, and III"]
   },
@@ -474,7 +475,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[24].imageUrl = "./images/image-ocp-ch13-25.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
