@@ -6,9 +6,9 @@ const qzString = [
       '<code>import java.util.*;</code>\n<code>&nbsp;</code>\n<code>public class Cheater {</code>\n<code>   int count = 0;</code>\n<code>   public void sneak(Collection&lt;String&gt; coll) {</code>\n<code>      coll.stream().________________________;</code>\n<code>   }</code>\n<code>&nbsp;</code>\n<code>   public static void main(String[] args) {</code>\n<code>      Cheater c = new Cheater();</code>\n<code>      c.sneak(Arrays.asList("weasel"));</code>\n<code>  }</code>\n<code>}</code>',
     answers: [
       "peek(System.out::println)",
-      "peek(System.out::println).findFirst()",
-      "peek(r -> System.out.println(r)).findFirst()",
-      "peek(r -> {count++; System.out.println(r); }).findFirst()"
+      "peek(System.out::println) .findFirst()",
+      "peek(r -> System.out.println(r)) .findFirst()",
+      "peek(r -> {count++; System.out.println(r); }) .findFirst()"
     ]
   },
   {
@@ -24,7 +24,8 @@ const qzString = [
     answers: ["None", "One", "Two", "Three"]
   },
   {
-    title: "",
+    title:
+      "How many of the following can fill in the blank to have the code print 44? 1. map 2.mapToInt 3.mapToObject",
     code:
       '<code>Stream&lt;String&gt; stream = Stream.of("base", "ball");</code>\n<code>stream._____________(s -&gt; s.length()).forEach(System.out::print);</code>',
     answers: ["None", "One", "Two", "Three"]
@@ -64,7 +65,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "How many of these collectors can fill in the blank to make this code compile?1. toArrayList() 2. toList() 3. toMap()",
     code:
       "<code>Stream&lt;Character&gt; chars = Stream.of(</code>\n<code>   'o', 'b', 's', 't', 'a', 'c', 'l', 'e');</code>\n<code>chars.map(c -&gt; c).collect(Collectors.____________ );</code>",
     answers: ["None", "One", "Two", "Three"]
@@ -81,7 +83,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which of the following creates an Optional that returns true when calling opt.isPresent()? 1.Optional<String> opt = Optional.empty();2.Optional<String> opt = Optional.of(null);3.Optional<String> opt = Optional.ofNullable(null);      ",
     code: null,
     answers: ["I", "I and II", "I and III", "None of the above"]
   },
@@ -188,7 +191,8 @@ const qzString = [
     answers: ["findAny()", "first()", "min()", "None of the above"]
   },
   {
-    title: "",
+    title:
+      "Which of the following can be the type for x?1.List<String> 2.Optional<Collection> 3.Optional<String> 4.Stream<Collection>",
     code:
       "<code>private static void spot(____________ x) {</code>\n<code>   x.filter(y -&gt; ! y.isEmpty())</code>\n<code>     .map(y -&gt; 8)</code>\n<code>     .ifPresent(System.out::println);</code>\n<code>}</code>",
     answers: ["I", "IV", "II and III", "II and IV"]
@@ -251,7 +255,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "How many of the following can fill in the blank to have the code print the single digit 9?1.mapToDouble 2.mapToInt 3.mapToLong",
     code:
       "<code>LongStream stream = LongStream.of(9);</code>\n<code>stream.____________(p -&gt; p).forEach(System.out::print);</code>",
     answers: ["None", "One", "Two", "Three"]
@@ -322,16 +327,21 @@ const qzString = [
       "The code does not compile."
     ]
   },
-  { title: "", code: null, answers: ["I", "II", "I and II", "I, II, and III"] },
+  {
+    title:
+      "When working with a Stream<String>, which of these types can be returned from the collect() terminal operator by passing arguments to Collectors.groupingBy()? 1.Map<Integer, List<String>> 2.Map<Boolean, HashSet<String>> 3.List<String>",
+    code: null,
+    answers: ["I", "II", "I and II", "I, II, and III"]
+  },
   {
     title:
       "Which line can replace line 18 without changing the output of the program?",
     code:
       "<code>1:   class Runner {</code>\n<code>2:      private int numberMinutes;</code>\n<code>3:      public Runner(int n) {</code>\n<code>4:         numberMinutes = n;</code>\n<code>5:      }</code>\n<code>6:      public int getNumberMinutes() {</code>\n<code>7:         return numberMinutes;</code>\n<code>8:      }</code>\n<code>9:      public boolean isFourMinuteMile() {</code>\n<code>10:        return numberMinutes &lt; 4*60;</code>\n<code>11:     }</code>\n<code>12:   }</code>\n<code>13:   public class Marathon {</code>\n<code>14:     public static void main(String[] args) {</code>\n<code>15:        Stream&lt;Runner&gt; runners = Stream.of(new Runner(250),</code>\n<code>16:           new Runner(600), new Runner(201));</code>\n<code>17:        long count = runners</code>\n<code>18:             .filter(Runner::isFourMinuteMile)</code>\n<code>19:             .count();</code>\n<code>20:        System.out.println(count);</code>\n<code>21:    }</code>\n<code>22:  }</code>",
     answers: [
-      ".map(Runner::isFourMinuteMile)",
-      "\n\n.mapToBool(Runner::isFourMinuteMile) \n\n    .filter(b -> b == true)\n",
-      ".mapToBoolean(Runner::isFourMinuteMile)     .filter(b -> b == true)",
+      ".map (Runner::isFourMinuteMile)",
+      ".mapToBool (Runner::isFourMinuteMile) .filter(b -> b == true)",
+      ".mapToBoolean (Runner::isFourMinuteMile) .filter(b -> b == true)",
       "None of the above"
     ]
   },
@@ -463,8 +473,8 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
-//   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
+quizs[23].imageUrl = "./images/image-ocp-ch15-24.png";
+quizs[29].imageUrl = "./images/image-ocp-ch15-30.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
 export default quizs;
