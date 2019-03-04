@@ -416,7 +416,12 @@ const qzString = [
       '<code>String[] os = new String[] { "Linux", "Mac", "Windows" };</code>\n<code>System.out.println(Arrays.binarySearch(os, "Linux"));</code>',
     answers: ["0", "1", "2", "The output is not defined."]
   },
-  { title: "Which of the following statements are true?", code: null },
+  {
+    title:
+      "Which of the following statements are true? 1.You can always change a method signature from call(String[] arg) to call(String... arg) without causing a compiler error in the calling code. 2.You can always change a method signature from call(String... arg) to call(String[] arg) without causing a compiler error in the existing code.",
+    code: null,
+    answers: ["I", "II", "Both I and II", "Neither I nor II"]
+  },
   {
     title:
       "Which of these four array references can point to an array that is different from the others?",
@@ -545,8 +550,8 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
-//   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
+quizs[20].imageUrl = "./images/image-oca-ch4-21.png";
+quizs[33].imageUrl = "./images/image-oca-ch4-34.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
 export default quizs;
