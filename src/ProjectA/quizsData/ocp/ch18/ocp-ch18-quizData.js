@@ -160,10 +160,10 @@ const qzString = [
     code:
       "<code>package magic;</code>\n<code>import java.io.*;</code>\n<code>public class Store {</code>\n<code>   private final String directory;</code>\n<code>   public Store(String directory) {</code>\n<code>      this.directory = directory;</code>\n<code>   }</code>\n<code>   public File getDatabaseFolder(String file) {</code>\n<code>      return new File(directory + __________ + file);</code>\n<code>   }</code>\n<code>}</code>",
     answers: [
-      "java.io.File.separator",
-      "new File(new String()).separatorChar",
-      'System.getProperty("file.separator")',
-      'System.getProperty("path.separator")'
+      "java.io. File.separator",
+      "new File(new String()). separatorChar",
+      'System. getProperty("file.separator")',
+      'System. getProperty("path.separator")'
     ]
   },
   {
@@ -229,7 +229,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which statements about executing the following program are true? (1)The program may ask the user a question and print the response to the error stream.(2)The program may throw a NullPointerException at runtime.(3)The program may wait indefinitely.",
     code:
       '<code>package test;</code>\n<code>import java.io.*;</code>\n<code>public class Turing {</code>\n<code>   public static void main(String... robots) {</code>\n<code>      Console c = System.console();</code>\n<code>      final String response = c.readLine("Are you human?");</code>\n<code>      System.err.print(response);</code>\n<code>   }</code>\n<code>}</code>',
     answers: ["I", "I and III", "II and III", "I, II, and III"]
@@ -494,7 +495,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[12].imageUrl = "./images/image-ocp-ch18-13.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
