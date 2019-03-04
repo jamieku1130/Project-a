@@ -11,6 +11,7 @@ const BallStyle = styled.div`
   margin-right: 8px;
   margin-top: 8px;
   border-radius: 50%;
+  border: 2px solid #eee;
   color: white;
   font-size: 10px;
   cursor: pointer;

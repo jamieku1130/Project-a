@@ -162,10 +162,10 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which of these classes are in the java.util package? 1.ArrayList 2.LocalDate. 3.String",
+    title: "Which of these classes are in the java.util package?",
     code: null,
-    answers: ["I only", "II only", "I and II", "I, II, and III"]
+    answers: ["I only", "II only", "I and II", "I, II, and III"],
+    ol: ["ArrayList", "LocalDate", "String"]
   },
   {
     title:
@@ -400,9 +400,10 @@ const qzString = [
   },
   {
     title:
-      "Which of the following types can you pass as a parameter to the replace() method on the String class? 1.char 2.String 3.StringBuilder",
+      "Which of the following types can you pass as a parameter to the replace() method on the String class?",
     code: null,
-    answers: ["I", "I and II", "II and III", "I, II, and III"]
+    answers: ["I", "I and II", "II and III", "I, II, and III"],
+    ol: ["char", "String", "StringBuilder"]
   },
   {
     title: "How many lines does this code output?",
@@ -549,7 +550,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a9[index]),
-    explain: a9[index]
+    explain: a9[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

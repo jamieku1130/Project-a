@@ -114,10 +114,14 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which statements about Java are true? \n1.The java command can execute .java and .class files.\n 2.Java is not object oriented.\n 3.The javac command compiles directly into native machine code.\n",
+    title: "Which statements about Java are true?",
     code: null,
-    answers: ["I only", "III only", "II and III", "None are true."]
+    answers: ["I only", "III only", "II and III", "None are true."],
+    ol: [
+      "The java command can execute .java and .class files.",
+      "Java is not object oriented.",
+      "The javac command compiles directly into native machine code."
+    ]
   },
   {
     title:
@@ -438,9 +442,14 @@ const qzString = [
   },
   {
     title:
-      "Which statements about calling the compilation command javac and the execution command java are true?\n1:java may use a period . to separate packages.\n2: javac takes a .java file and returns a .class file.\n3: java may use a slash (/) to separate packages.\n",
+      "Which statements about calling the compilation command javac and the execution command java are true?",
     code: null,
-    answers: ["I only", "II only", "I and II", "I, II, and III"]
+    answers: ["I only", "II only", "I and II", "I, II, and III"],
+    ol: [
+      "java may use a period . to separate packages.",
+      "javac takes a .java file and returns a .class file.",
+      "java may use a slash (/) to separate packages."
+    ]
   },
   {
     title:
@@ -576,6 +585,7 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a1[index]),
+    ol: qz["ol"],
     explain: a1[index]
   };
 });

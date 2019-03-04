@@ -223,8 +223,7 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which keywords are required with a try statement? 1.finalize 2.catch 3.throws 4.finally",
+    title: "Which keywords are required with a try statement?",
     code: null,
     answers: [
       "I only",
@@ -233,7 +232,8 @@ const qzString = [
       "IV only",
       "I or II, or both",
       "None of the above"
-    ]
+    ],
+    ol: ["finalize", "catch", "throws", "finally"]
   },
   {
     title: "What is the output of the following?",
@@ -416,8 +416,7 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which of the following statements about Java are true? 1.The java command uses . to separate packages. 2.Java supports functional programming. 3.Java is object oriented. 4.Java supports polymorphism.",
+    title: "Which of the following statements about Java are true?",
     code: null,
     answers: [
       "I only",
@@ -426,6 +425,12 @@ const qzString = [
       "I, III, and IV",
       "I, II, III, and IV",
       "None are true."
+    ],
+    ol: [
+      "The java command uses . to separate packages.",
+      "Java supports functional programming.",
+      "Java is object oriented.",
+      "Java supports polymorphism."
     ]
   },
   {
@@ -1090,7 +1095,8 @@ const quizs = qzString.map((qz, index) => {
     imageUrl: null,
     answerArray: mapAnswersForArray(qz["answers"], a10[index]),
     answersIntArray: convertCorrectIndexToArray(a10[index]),
-    explain: a10[index]
+    explain: a10[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

@@ -217,7 +217,7 @@ const qzString = [
   },
   {
     title:
-      "Which statement(s) about the following class would help to properly encapsulate the data in the class? 1.Change the access modifier of strength to private. 2.Add a getter method for material. 3.Add a setter method for material.",
+      "Which statement(s) about the following class would help to properly encapsulate the data in the class?",
     code:
       "<code>package shield;</code>\n<code>public class Protect {</code>\n<code>   private String material;</code>\n<code>   protected int strength;</code>\n<code>&nbsp;</code>\n<code>   public int getStrength() {</code>\n<code>      return strength;</code>\n<code>   }</code>\n<code>   public void setStrength(int strength) {</code>\n<code>      this.strength = strength;</code>\n<code>   }</code>\n<code>}</code>",
     answers: [
@@ -225,6 +225,11 @@ const qzString = [
       "II and III",
       "I, II, and III",
       "None, the data in the class is already encapsulated."
+    ],
+    ol: [
+      "Change the access modifier of strength to private.",
+      "Add a getter method for material.",
+      "Add a setter method for material."
     ]
   },
   {
@@ -315,9 +320,14 @@ const qzString = [
   },
   {
     title:
-      "Which of the following statements about overloaded methods are true? 1.Overloaded methods must have the same name. 2.Overloaded methods must have the same return type. 3.Overloaded methods must have a different list of parameters.",
+      "Which of the following statements about overloaded methods are true? ",
     code: null,
-    answers: ["I", "I and II", "I and III", "I, II, and III"]
+    answers: ["I", "I and II", "I and III", "I, II, and III"],
+    ol: [
+      "Overloaded methods must have the same name.",
+      "Overloaded methods must have the same return type.",
+      "Overloaded methods must have a different list of parameters."
+    ]
   },
   {
     title:
@@ -566,7 +576,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a6[index]),
-    explain: a6[index]
+    explain: a6[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

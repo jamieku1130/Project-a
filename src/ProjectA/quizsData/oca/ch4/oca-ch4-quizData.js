@@ -417,10 +417,13 @@ const qzString = [
     answers: ["0", "1", "2", "The output is not defined."]
   },
   {
-    title:
-      "Which of the following statements are true? 1.You can always change a method signature from call(String[] arg) to call(String... arg) without causing a compiler error in the calling code. 2.You can always change a method signature from call(String... arg) to call(String[] arg) without causing a compiler error in the existing code.",
+    title: "Which of the following statements are true? ",
     code: null,
-    answers: ["I", "II", "Both I and II", "Neither I nor II"]
+    answers: ["I", "II", "Both I and II", "Neither I nor II"],
+    ol: [
+      "You can always change a method signature from call(String[] arg) to call(String... arg) without causing a compiler error in the calling code.",
+      "You can always change a method signature from call(String... arg) to call(String[] arg) without causing a compiler error in the existing code."
+    ]
   },
   {
     title:
@@ -546,7 +549,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a4[index]),
-    explain: a4[index]
+    explain: a4[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

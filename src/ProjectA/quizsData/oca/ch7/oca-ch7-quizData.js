@@ -566,7 +566,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a7[index]),
-    explain: a7[index]
+    explain: a7[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

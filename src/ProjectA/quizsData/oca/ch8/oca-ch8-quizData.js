@@ -135,15 +135,15 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which keywords are required with a try statement? 1.catch 2.finalize 3.finally",
+    title: "Which keywords are required with a try statement?",
     code: null,
     answers: [
       "I only",
       "II only",
       "I or III, or both",
       "None of these statements are required with a try statement."
-    ]
+    ],
+    ol: ["catch", "finalize", "finally"]
   },
   {
     title: "Which statement about the role of exceptions in Java is incorrect?",
@@ -354,10 +354,11 @@ const qzString = [
   },
   {
     title:
-      "In the following application, the values of street and city have been omitted. Which one of the following is a possible output of executing this class? 1.350 5th Ave - New York 2.Posted:350 5th Ave - New York",
+      "In the following application, the values of street and city have been omitted. Which one of the following is a possible output of executing this class?",
     code:
       '<code>package registration;</code>\n<code>public class Address {</code>\n<code>   public String getAddress(String street, String city) {</code>\n<code>      try {</code>\n<code>         return street.toString() + " : " + city.toString();</code>\n<code>      } finally {</code>\n<code>         System.out.print("Posted:");</code>\n<code>      }</code>\n<code>   }</code>\n<code>   public static void main(String[] form) {</code>\n<code>      String street = // value omitted</code>\n<code>      String city = // value omitted</code>\n<code>      System.out.print(new Address().getAddress(street,city));</code>\n<code>   }</code>\n<code>}</code>',
-    answers: ["I only", "II only", "I and II", "None of the above"]
+    answers: ["I only", "II only", "I and II", "None of the above"],
+    ol: ["350 5th Ave - New York", "Posted:350 5th Ave - New York"]
   },
   {
     title:
@@ -628,7 +629,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a8[index]),
-    explain: a8[index]
+    explain: a8[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

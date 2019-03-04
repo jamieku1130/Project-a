@@ -241,10 +241,15 @@ const qzString = [
     ]
   },
   {
-    title:
-      'Which of the following correctly assigns animal to both variables? 1.String cat = "animal", dog = "animal"; 2. String cat = "animal"; dog = "animal" 3.String cat, dog = "animal"; 4.String cat, String dog = "animal";',
+    title: "Which of the following correctly assigns animal to both variables?",
     code: null,
-    answers: ["I", "I, II", "I, III", "I, II, III, IV"]
+    answers: ["I", "I, II", "I, III", "I, II, III, IV"],
+    ol: [
+      'String cat = "animal", dog = "animal";',
+      'String cat = "animal"; dog = "animal";',
+      'String cat, dog = "animal";',
+      'String cat, String dog = "animal";'
+    ]
   },
   {
     title:
@@ -533,7 +538,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a2[index]),
-    explain: a2[index]
+    explain: a2[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

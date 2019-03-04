@@ -40,16 +40,22 @@ const qzString = [
     answers: ["do-while loop", "for (traditional)", "for-each", "while"]
   },
   {
-    title:
-      "Which of the following statements is/are true? 1.A traditional for loop can iterate through an array starting from index 0. 2.A traditional for loop can iterate through an array starting from the end. ",
+    title: "Which of the following statements is/are true?",
     code: null,
-    answers: ["Only I", "Only II", "Both statements", "Neither statement"]
+    answers: ["Only I", "Only II", "Both statements", "Neither statement"],
+    ol: [
+      "A traditional for loop can iterate through an array starting from index 0.",
+      "A traditional for loop can iterate through an array starting from the end."
+    ]
   },
   {
-    title:
-      "Which of the following statements is/are true? 1.A for-each loop can iterate through an array starting from index 0. 2.A for-each loop can iterate through an array starting from the end.",
+    title: "Which of the following statements is/are true? ",
     code: null,
-    answers: ["Only I", "Only II", "Both statements", "Neither statement"]
+    answers: ["Only I", "Only II", "Both statements", "Neither statement"],
+    ol: [
+      "A for-each loop can iterate through an array starting from index 0.",
+      "A for-each loop can iterate through an array starting from the end."
+    ]
   },
   {
     title:
@@ -548,7 +554,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a5[index]),
-    explain: a5[index]
+    explain: a5[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

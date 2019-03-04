@@ -122,6 +122,7 @@ class Exam extends Component {
               id={qObj.id}
               code={qObj.code}
               imageUrl={qObj.imageUrl}
+              ol={qObj.ol}
             />
             <div className="prompt-textbox">
               {qObj.answersIntArray.length === 1 ? (

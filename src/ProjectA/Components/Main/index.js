@@ -97,6 +97,7 @@ class Main extends Component {
                 id={qObj.id}
                 code={qObj.code}
                 imageUrl={qObj.imageUrl}
+                ol={qObj.ol}
               />
 
               <div className="answers">
