@@ -29,9 +29,10 @@ const qzString = [
   },
   {
     title:
-      "Which symbol(s) can be used to separate exception types in a multi-catch statement? (1)& (2)| (3)||",
+      "Which symbol(s) can be used to separate exception types in a multi-catch statement?",
     code: null,
-    answers: ["II only", "III only", "II and III", "I, II, and III"]
+    answers: ["II only", "III only", "II and III", "I, II, and III"],
+    ol: ["&", "|", "||"]
   },
   {
     title:
@@ -124,10 +125,15 @@ const qzString = [
   },
   {
     title:
-      "Which exception classes, when inserted into the blank in the Problems class, allow the code to compile? 1.Exception 2.MissingMoneyException 3.MissingMoneyException, MissingFoodException",
+      "Which exception classes, when inserted into the blank in the Problems class, allow the code to compile?",
     code:
       '<code>package more;</code>\n<code>class MissingMoneyException extends Exception {}</code>\n<code>class MissingFoodException extends Exception {}</code>\n<code>public class Problems {</code>\n<code>   public void doIHaveAProblem() throws MissingMoneyException,          MissingFoodException {</code>\n<code>      System.out.println("No problems");</code>\n<code>   }</code>\n<code>   public static void main(String[] lots) throws  ________________{</code>\n<code>      try {</code>\n<code>         final Problems p = new Problems();</code>\n<code>         p.doIHaveAProblem();</code>\n<code>      } catch (Exception e) {</code>\n<code><span epub:type="pagebreak" id="Page_277"></span>         throw e;</code>\n<code>      }</code>\n<code>   }</code>\n<code>}</code>',
-    answers: ["I only", "III only", "I and III", "I, II, and II"]
+    answers: ["I only", "III only", "I and III", "I, II, and II"],
+    ol: [
+      "Exception",
+      "MissingMoneyException",
+      "MissingMoneyException, MissingFoodException"
+    ]
   },
   {
     title: "Which statement about Closeable and AutoCloseable is true?",
@@ -279,11 +285,15 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which statements about the following classes are true?(1).Four of the classes are checked exceptions.(2)Two of the classes are unchecked exceptions.(3)None of the class declarations contain any compilation errors.",
+    title: "Which statements about the following classes are true?",
     code:
       "<code>public class Dopey extends Grumpy {}</code>\n<code>public class Grumpy extends Exception {}</code>\n<code>public class Happy extends IOException {}</code>\n<code>public class Sleepy extends IllegalStateException {}</code>\n<code>public class Sneezy extends Throwable {}</code>",
-    answers: ["I only", "I and III", "II and III", "I, II, and III"]
+    answers: ["I only", "I and III", "II and III", "I, II, and III"],
+    ol: [
+      "Four of the classes are checked exceptions.",
+      "Two of the classes are unchecked exceptions.",
+      "None of the class declarations contain any compilation errors."
+    ]
   },
   {
     title: "What is the output of the following application?",
@@ -480,7 +490,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a16[index]),
-    explain: a16[index]
+    explain: a16[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

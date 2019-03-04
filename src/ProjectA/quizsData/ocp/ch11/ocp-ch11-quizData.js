@@ -304,10 +304,16 @@ const qzString = [
   },
   {
     title:
-      "How many of the following pairs of values can fill in the blanks to comply with the contract of the hashCode() and equals() methods? 1.1, false 2.1, true 3.new Random().nextInt(), false 4.new Random().nextInt(), true",
+      "How many of the following pairs of values can fill in the blanks to comply with the contract of the hashCode() and equals() methods?",
     code:
       "<code>class Sticker {</code>\n<code>   public int hashCode() {</code>\n<code>      return _____________;</code>\n<code>   }</code>\n<code>   public boolean equals(Object o) {</code>\n<code>      return _____________;</code>\n<code>   }</code>\n<code>}</code>",
-    answers: ["None", "One", "Two", "Three"]
+    answers: ["None", "One", "Two", "Three"],
+    ol: [
+      "1, false",
+      "1, true",
+      "new Random().nextInt(), false",
+      "new Random().nextInt(), true"
+    ]
   },
   {
     title:
@@ -352,10 +358,11 @@ const qzString = [
   },
   {
     title:
-      "Which of the following values can fill in the blank for the class to be correctly implemented? 1.-1 2.5 3.new Random().nextInt()",
+      "Which of the following values can fill in the blank for the class to be correctly implemented?",
     code:
       "<code>class Sticker {</code>\n<code>   public int hashCode(Object o) {</code>\n<code>      return_____________ ;</code>\n<code>   }</code>\n<code>   public boolean equals(Object o) {</code>\n<code>      return true;</code>\n<code>   }</code>\n<code>}</code>",
-    answers: ["I", "I and II", "I, II, and III", "I and III"]
+    answers: ["I", "I and II", "I, II, and III", "I and III"],
+    ol: ["-1", "5", "new Random().nextInt()"]
   }
 ];
 
@@ -448,7 +455,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a11[index]),
-    explain: a11[index]
+    explain: a11[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

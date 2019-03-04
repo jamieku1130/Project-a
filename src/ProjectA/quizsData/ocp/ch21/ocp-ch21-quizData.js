@@ -65,9 +65,14 @@ const qzString = [
   },
   {
     title:
-      "How many of the following could be valid JDBC URL formats for an imaginary driver named magic and a database named box? 1.jdbc:magic: 127.0.0.1:1234/box 2.jdbc:magic:box 3.jdbc:magic:@127.0.0.1:1234",
+      "How many of the following could be valid JDBC URL formats for an imaginary driver named magic and a database named box?",
     code: null,
-    answers: ["None", "One", "Two", "Three"]
+    answers: ["None", "One", "Two", "Three"],
+    ol: [
+      "jdbc:magic:127.0.0.1:1234/box",
+      "jdbc:magic:box",
+      "jdbc:magic:@127.0.0.1:1234"
+    ]
   },
   {
     title:
@@ -82,9 +87,15 @@ const qzString = [
   },
   {
     title:
-      "Which pair of statements is true when requesting a ResultSet to be both scroll sensitive and updatable? 1.The scroll sensitive option is passed as a parameter before the updatable parameter. 2.The updatable option is passed as a parameter before the scroll sensitive parameter. 3.If these options are not available, the database driver returns a ResultSet with different options. 4.If these options are not available, the database driver throws a SQLException.",
+      "Which pair of statements is true when requesting a ResultSet to be both scroll sensitive and updatable?",
     code: null,
-    answers: ["I, III", "I, IV", "II, III", "II, IV"]
+    answers: ["I, III", "I, IV", "II, III", "II, IV"],
+    ol: [
+      "The scroll sensitive option is passed as a parameter before the updatable parameter.",
+      "The updatable option is passed as a parameter before the scroll sensitive parameter.",
+      "If these options are not available, the database driver returns a ResultSet with different options.",
+      "If these options are not available, the database driver throws a SQLException."
+    ]
   },
   {
     title:
@@ -140,10 +151,10 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which are valid ResultSet types? 1.TYPE_BACKWARD_ONLY 2.TYPE_FORWARD_ONLY 3.TYPE_REVERSE_ONLY",
+    title: "Which are valid ResultSet types?",
     code: null,
-    answers: ["II", "I and II", "II and III", "None of the above"]
+    answers: ["II", "I and II", "II and III", "None of the above"],
+    ol: ["TYPE_BACKWARD_ONLY", "TYPE_FORWARD_ONLY", "TYPE_REVERSE_ONLY"]
   },
   {
     title:
@@ -485,7 +496,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a21[index]),
-    explain: a21[index]
+    explain: a21[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

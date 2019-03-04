@@ -234,9 +234,10 @@ const qzString = [
   },
   {
     title:
-      "Which of the following method references can be passed to a method that takes Consumer<Object> as an argument?1.ArrayList::new2.String::new3.System.out::println",
+      "Which of the following method references can be passed to a method that takes Consumer<Object> as an argument?",
     code: null,
-    answers: ["I only", "I, II, and III", "I and III", "III only"]
+    answers: ["I only", "I, II, and III", "I and III", "III only"],
+    ol: ["ArrayList::new", "String::new", "System.out::println"]
   },
   {
     title:
@@ -377,14 +378,15 @@ const qzString = [
   },
   {
     title:
-      "Which of the following lambda expressions can be passed to a method that takes IntFunction<Integer> as an argument? 1.(Integer f) -> f 2.(v) -> null 3.s -> s",
+      "Which of the following lambda expressions can be passed to a method that takes IntFunction<Integer> as an argument?",
     code: null,
     answers: [
       "I, II, and III",
       "II and III only",
       "III only",
       "None of the above"
-    ]
+    ],
+    ol: ["(Integer f) -> f", "(v) -> null", "s -> s"]
   },
   {
     title: "What is the output of the following application?",
@@ -499,7 +501,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a14[index]),
-    explain: a14[index]
+    explain: a14[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

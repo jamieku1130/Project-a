@@ -37,10 +37,10 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which interfaces does Properties implement? 1.Hashtable 2.HashMap 3.Map",
+    title: "Which interfaces does Properties implement?",
     code: null,
-    answers: ["III", "I and II", "I and III", "II and III"]
+    answers: ["III", "I and II", "I and III", "II and III"],
+    ol: ["Hashtable", "HashMap", "Map"]
   },
   {
     title:
@@ -507,7 +507,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a22[index]),
-    explain: a22[index]
+    explain: a22[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

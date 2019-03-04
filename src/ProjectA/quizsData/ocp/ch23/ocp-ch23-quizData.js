@@ -93,10 +93,18 @@ const qzString = [
   },
   {
     title:
-      " How many of the following can fill in the blank to make this code compile?1.LocalDate now = LocalDate.now();2.LocalDate now = new LocalDate();3.LocalDateTime now = LocalDateTime.now();4.LocalDateTime now = new LocalDateTime();5.ZonedDate now = ZonedDate.now();6.ZonedDate now = new ZonedDate();",
+      " How many of the following can fill in the blank to make this code compile?",
     code:
       "<code>public boolean isItMyBirthday(LocalDateTime dateTime) {</code>\n<code>   ________________________________________  </code>\n<code>   return now.getMonth() == dateTime.getMonth()</code>\n<code>      &amp;&amp; now.getDayOfMonth() == dateTime.getDayOfMonth();</code>\n<code>}</code>",
-    answers: ["None", "One", "Two", "Three", "Four", "Five"]
+    answers: ["None", "One", "Two", "Three", "Four", "Five"],
+    ol: [
+      "LocalDate now = LocalDate.now();",
+      "LocalDate now = new LocalDate();",
+      "LocalDateTime now = LocalDateTime.now();",
+      "LocalDateTime now = new LocalDateTime();",
+      "ZonedDate now = ZonedDate.now();",
+      "ZonedDate now = new ZonedDate();"
+    ]
   },
   {
     title:
@@ -127,9 +135,10 @@ const qzString = [
   },
   {
     title:
-      "Which of the following cannot be instantiated directly by the caller using the constructor?1.Locale.2.Properties3.ResourceBundle",
+      "Which of the following cannot be instantiated directly by the caller using the constructor?",
     code: null,
-    answers: ["I", "II", "III", "I, II", "I, III", "II, III"]
+    answers: ["I", "II", "III", "I, II", "I, III", "II, III"],
+    ol: ["Locale", "Properties", "ResourceBundle"]
   },
   {
     title: "What design pattern or principle is used in this class?",
@@ -159,9 +168,17 @@ const qzString = [
   },
   {
     title:
-      "Which of the following are JDBC interfaces in the java.sql package?1.Driver2.DriverManager.3.Query4.ResultSet ",
+      "Which of the following are JDBC interfaces in the java.sql package?",
     code: null,
-    answers: ["I, III", "I, IV", "II, III", "II, IV", "I, II, III", "I, II, IV"]
+    answers: [
+      "I, III",
+      "I, IV",
+      "II, III",
+      "II, IV",
+      "I, II, III",
+      "I, II, IV"
+    ],
+    ol: ["Driver", "DriverManager", "Query", "ResultSet"]
   },
   {
     title:
@@ -203,8 +220,7 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which statements about the following class are true?1.The class compiles.2.The design protects the password by clearing it from memory after it is entered.3.The class may throw an exception at runtime. ",
+    title: "Which statements about the following class are true?",
     code:
       '<code>package secure;</code>\n<code>import java.io.*;</code>\n<code>public class Login {</code>\n<code>   public void clearPassword(char[] password) {</code>\n<code>      for(int i=0; i&lt;password.length; i++) {</code>\n<code>         password[i] = 0;</code>\n<code>      }</code>\n<code>   }</code>\n<code>   public String getPassword() {</code>\n<code>      Console c = System.console();</code>\n<code>      final char[] pass = c.readPassword("Enter your password: ");</code>\n<code>      StringBuilder sb = new StringBuilder();</code>\n<code>      for(char p : pass) {</code>\n<code>         sb.append(p);</code>\n<code>      }</code>\n<code>      clearPassword(pass);</code>\n<code>      return sb.toString();</code>\n<code>   }</code>\n<code>   public static void main(String[] webLogin) {</code>\n<code>      String pass = new Login().getPassword();</code>\n<code>   }</code>\n<code>}</code>',
     answers: [
@@ -213,6 +229,11 @@ const qzString = [
       "I and II only",
       "I and III only",
       "I, II, and III"
+    ],
+    ol: [
+      "The class compiles.",
+      "The design protects the password by clearing it from memory after it is entered.",
+      "The class may throw an exception at runtime."
     ]
   },
   {
@@ -362,7 +383,7 @@ const qzString = [
   },
   {
     title:
-      "Which of the following can be independently inserted into the blank so the code can run without error for at least one SQL query?1.System.out.println(rs.getInt(1));2.rs.next(); System.out.println(rs.getInt(1));3.if (rs.next()) System.out.println(rs.getInt(1)); ",
+      "Which of the following can be independently inserted into the blank so the code can run without error for at least one SQL query?",
     code:
       "<code>private static void choices(Connection conn, String sql)       throws SQLException {</code>\n<code>   try (Statement stmt = conn.createStatement();</code>\n<code>       ResultSet rs = stmt.executeQuery(sql)) {</code>\n<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;____________________</code>\n<code>       </code>\n<code>   }</code>\n<code>}</code>",
     answers: [
@@ -372,6 +393,11 @@ const qzString = [
       "II and III",
       "I, II, and III",
       "None of the above"
+    ],
+    ol: [
+      "System.out.println(rs.getInt(1));",
+      "rs.next(); System.out.println(rs.getInt(1));",
+      "if (rs.next()) System.out.println(rs.getInt(1));"
     ]
   },
   {
@@ -413,8 +439,7 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which are the minimum changes needed to make this class immutable? 1.Make species private and final.2.Make the getter method final.3.Remove the setter method.",
+    title: "Which are the minimum changes needed to make this class immutable?",
     code:
       "<code>1:   public class Tree {</code>\n<code>2:      String species;</code>\n<code>3:      public Tree(String species) {</code>\n<code>4:         this.species = species;</code>\n<code>5:      }</code>\n<code>6:      public String getSpecies() {</code>\n<code>7:        return species;</code>\n<code>8:      }</code>\n<code>9:      private final void setSpecies(String newSpecies) {</code>\n<code>10:        species = newSpecies;</code>\n<code>11:    }</code>\n<code>12:  }</code>",
     answers: [
@@ -424,6 +449,11 @@ const qzString = [
       "I and III",
       "II and III",
       "I, II, and III"
+    ],
+    ol: [
+      "Make species private and final.",
+      "Make the getter method final.",
+      "Remove the setter method."
     ]
   },
   {
@@ -515,7 +545,7 @@ const qzString = [
   },
   {
     title:
-      "Which are the minimum changes needed to properly implement the singleton pattern?1.Add a private constructor.2.Remove the setter method.3.Remove the static block and change line 2 to instantiate Bookmark. ",
+      "Which are the minimum changes needed to properly implement the singleton pattern?",
     code:
       "<code>1:   public class Bookmark {</code>\n<code>2:      private static Bookmark bookmark;</code>\n<code>3:      private int pageNumber;</code>\n<code>4:      static {</code>\n<code>5:        bookmark = new Bookmark();</code>\n<code>6:      }</code>\n<code>7:      public static Bookmark getInstance() {</code>\n<code>8:         return bookmark;</code>\n<code>9:      }</code>\n<code>10:     public int getPageNumber() {</code>\n<code>11:        return pageNumber;</code>\n<code>12:     }</code>\n<code>13:     public void setPageNumber(int newNumber) {</code>\n<code>14:        pageNumber = newNumber;</code>\n<code>15:     }</code>\n<code>16:  }</code>",
     answers: [
@@ -525,6 +555,11 @@ const qzString = [
       "I and III",
       "II and III",
       "I, II, and III"
+    ],
+    ol: [
+      "Add a private constructor.",
+      "Remove the setter method.",
+      "Remove the static block and change line 2 to instantiate Bookmark."
     ]
   },
   {
@@ -784,7 +819,7 @@ const qzString = [
   },
   {
     title:
-      "How many of the following pairs of values can fill in the blanks to comply with the contract of the hashCode() and equals() methods?1.5, false2.5, true3.new Random().nextInt(), false4.new Random().nextInt(), true ",
+      "How many of the following pairs of values can fill in the blanks to comply with the contract of the hashCode() and equals() methods?",
     code:
       "<code>class Sticker {</code>\n<code>   @Override</code>\n<code>   public int hashCode() {</code>\n<code>      return _______________ ;</code>\n<code>   }</code>\n<code>   @Override</code>\n<code>   public boolean equals(Sticker o) {</code>\n<code>      return _______________;</code>\n<code>   }</code>\n<code>}</code>",
     answers: [
@@ -794,6 +829,12 @@ const qzString = [
       "Three",
       "Four",
       "None of the above. The code does not compile with any of the options."
+    ],
+    ol: [
+      "5, false",
+      "5, true",
+      "new Random().nextInt(), false",
+      "new Random().nextInt(), true"
     ]
   },
   {
@@ -809,8 +850,7 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which statements about the following application are true?1.The lambda expression for dress on line 7 compiles without issue.2.The lambda expression for addDragon on line 8 compiles without issue.3.Not counting the lambda expressions on lines 7 and 8, the code does not contain any compilation errors. ",
+    title: "Which statements about the following application are true?",
     code:
       "<code>1:  package armory;</code>\n<code>2:  import java.util.function.*;</code>\n<code>3:  class Shield {}</code>\n<code>4:  public class Sword {</code>\n<code>5:     public class Armor {</code>\n<code>6:       int count;</code>\n<code>7:        public final Function&lt;Shield,Sword,Armor&gt; dress = (h,w) ‐&gt; new Armor();</code>\n<code>8:       public final IntSupplier&lt;Integer&gt; addDragon = () ‐&gt; count++;</code>\n<code>9:     }</code>\n<code>10:    public static void main(String[] knight) {</code>\n<code>11:      final Armor a = new Armor();</code>\n<code>12:      a.dress.apply(new Shield(), new Sword());</code>\n<code>13:      a.addDragon.getAsInt();</code>\n<code>14:    }</code>\n<code>15: }</code>",
     answers: [
@@ -819,6 +859,11 @@ const qzString = [
       "I, II, and III",
       "II and III only",
       "None of the above"
+    ],
+    ol: [
+      "The lambda expression for dress on line 7 compiles without issue.",
+      "The lambda expression for addDragon on line 8 compiles without issue.",
+      "Not counting the lambda expressions on lines 7 and 8, the code does not contain any compilation errors."
     ]
   },
   {
@@ -964,8 +1009,7 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which statements about the following application are true?1.The scheduleWithFixedDelay() method call compiles.2.The scheduleAtFixedRate() method call compiles.3.The execute() method call compiles. ",
+    title: "Which statements about the following application are true?",
     code:
       '<code>package party;</code>\n<code>import java.util.concurrent.*;</code>\n<code>public class Plan {</code>\n<code>   private ExecutorService service = Executors.newCachedThreadPool();</code>\n<code>   public void planEvents() {</code>\n<code>      service.scheduleWithFixedDelay(</code>\n<code>            () -&gt; System.out.print("Check food stock"),</code>\n<code>            1, TimeUnit.HOURS);</code>\n<code>      service.scheduleAtFixedRate(</code>\n<code>            () -&gt; System.out.print("Check drink stock"),</code>\n<code>            1, 1000, TimeUnit.SECONDS);</code>\n<code>      service.execute(() -&gt; System.out.print("Take out trash"));</code>\n<code>   }</code>\n<code>}</code>',
     answers: [
@@ -975,6 +1019,11 @@ const qzString = [
       "I and II",
       "I, II, and III",
       "None of the above"
+    ],
+    ol: [
+      "The scheduleWithFixedDelay() method call compiles.",
+      "The scheduleAtFixedRate() method call compiles.",
+      "The execute() method call compiles."
     ]
   },
   {
@@ -1004,9 +1053,16 @@ const qzString = [
   },
   {
     title:
-      "How many of the following could be valid JDBC URL formats for an imaginary driver named magic and a database named box?1.jdbc;box;magic2.jdbc;magic;@127.0.0.1:12343.jdbc;magic;//@127.0.0.1:12344.jdbc;magic;127.0.0.1:1234/box5.magic;jdbc;127.0.0.1:1234/box ",
+      "How many of the following could be valid JDBC URL formats for an imaginary driver named magic and a database named box?",
     code: null,
-    answers: ["None", "One", "Two", "Three", "Four", "Five"]
+    answers: ["None", "One", "Two", "Three", "Four", "Five"],
+    ol: [
+      "jdbc;box;magic",
+      "jdbc;magic;@127.0.0.1:1234",
+      "jdbc;magic;//@127.0.0.1:1234",
+      "jdbc;magic;127.0.0.1:1234/box",
+      "magic;jdbc;127.0.0.1:1234/box"
+    ]
   },
   {
     title: "What is the output of the following?",
@@ -1201,7 +1257,8 @@ const quizs = qzString.map((qz, index) => {
     imageUrl: null,
     answerArray: mapAnswersForArray(qz["answers"], a23[index]),
     answersIntArray: convertCorrectIndexToArray(a23[index]),
-    explain: a23[index]
+    explain: a23[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

@@ -49,11 +49,11 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which correctly fills in the blank to print 2017-01-15? (1)f.format(hatDay)(2)f.formatDate(hatDay)(3)hatDay.format(f)",
+    title: "Which correctly fills in the blank to print 2017-01-15?",
     code:
       "<code>LocalDate hatDay = LocalDate.of(2017, Month.JANUARY, 15);</code>\n<code>DateTimeFormatter f = DateTimeFormatter.ISO_DATE;</code>\n<code>System.out.println(_______________________);</code>",
-    answers: ["I", "III", "I and III", "II and III"]
+    answers: ["I", "III", "I and III", "II and III"],
+    ol: ["f.format(hatDay)", "f.formatDate(hatDay)", "hatDay.format(f)"]
   },
   {
     title: "Which of the answer choices is true given the following?",
@@ -456,7 +456,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a17[index]),
-    explain: a17[index]
+    explain: a17[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

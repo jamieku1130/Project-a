@@ -61,10 +61,10 @@ const qzString = [
     answers: ["1 1 2", "5 2 2", "5 2 1", "The code does not compile."]
   },
   {
-    title:
-      "A local inner class can access which type of local variables? 1.final 2.private 3.effectively final",
+    title: "A local inner class can access which type of local variables?",
     code: null,
-    answers: ["I only", "I and II", "III only", "I and III"]
+    answers: ["I only", "I and II", "III only", "I and III"],
+    ol: ["final", "private", "effectively final"]
   },
   {
     title: "What is the output of the following application?",
@@ -305,11 +305,15 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which statement(s) about the following Twins class are true? 1.The class fails to compile because of the write() method.2.The class fails to compile because of the publish() method. 3.The class fails to compile because of the think() method.",
+    title: "Which statement(s) about the following Twins class are true?",
     code:
       '<code>package clone;</code>\n<code>&nbsp;</code>\n<code>interface Alex {</code>\n<code>   default void write() {}</code>\n<code>   static void publish() {}</code>\n<code>   void think();</code>\n<code>}</code>\n<code>interface Michael {</code>\n<code>   public default void write() {}</code>\n<code>   public static void publish() {}</code>\n<code>   public void think();</code>\n<code>}</code>\n<code>&nbsp;</code>\n<code>public class Twins implements Alex, Michael {</code>\n<code>   @Override public void write() {}</code>\n<code>   @Override public static void publish() {}</code>\n<code>   @Override public void think() {</code>\n<code>      System.out.print("Thinking...");</code>\n<code>   }</code>\n<code>}</code>',
-    answers: ["I only", "II only", "I and II", "II and III"]
+    answers: ["I only", "II only", "I and II", "II and III"],
+    ol: [
+      "The class fails to compile because of the write() method.",
+      "The class fails to compile because of the publish() method.",
+      "The class fails to compile because of the think() method."
+    ]
   },
   {
     title:
@@ -499,7 +503,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a12[index]),
-    explain: a12[index]
+    explain: a12[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

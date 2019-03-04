@@ -229,11 +229,15 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which statements about executing the following program are true? (1)The program may ask the user a question and print the response to the error stream.(2)The program may throw a NullPointerException at runtime.(3)The program may wait indefinitely.",
+    title: "Which statements about executing the following program are true?",
     code:
       '<code>package test;</code>\n<code>import java.io.*;</code>\n<code>public class Turing {</code>\n<code>   public static void main(String... robots) {</code>\n<code>      Console c = System.console();</code>\n<code>      final String response = c.readLine("Are you human?");</code>\n<code>      System.err.print(response);</code>\n<code>   }</code>\n<code>}</code>',
-    answers: ["I", "I and III", "II and III", "I, II, and III"]
+    answers: ["I", "I and III", "II and III", "I, II, and III"],
+    ol: [
+      "The program may ask the user a question and print the response to the error stream.",
+      "The program may throw a NullPointerException at runtime.",
+      "The program may wait indefinitely."
+    ]
   },
   {
     title:
@@ -491,7 +495,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a18[index]),
-    explain: a18[index]
+    explain: a18[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

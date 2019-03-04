@@ -1,9 +1,10 @@
 const qzString = [
   {
     title:
-      "Which of the following can fill in the blank to make the code compile?1.?2.News3.Object",
+      "Which of the following can fill in the blank to make the code compile?",
     code: "<code>public class News&lt;________&gt; {}</code>",
-    answers: ["None of them", "I", "II and III", "I, II, and III"]
+    answers: ["None of them", "I", "II and III", "I, II, and III"],
+    ol: ["?", "News", "Object"]
   },
   {
     title: "Which method is available on both List and Stream implementations?",
@@ -471,7 +472,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a13[index]),
-    explain: a13[index]
+    explain: a13[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

@@ -25,10 +25,11 @@ const qzString = [
   },
   {
     title:
-      "How many of the following can fill in the blank to have the code print 44? 1. map 2.mapToInt 3.mapToObject",
+      "How many of the following can fill in the blank to have the code print 44?",
     code:
       '<code>Stream&lt;String&gt; stream = Stream.of("base", "ball");</code>\n<code>stream._____________(s -&gt; s.length()).forEach(System.out::print);</code>',
-    answers: ["None", "One", "Two", "Three"]
+    answers: ["None", "One", "Two", "Three"],
+    ol: ["map", "mapToInt", "mapToObject"]
   },
   {
     title: "What is the result of the following?",
@@ -66,10 +67,11 @@ const qzString = [
   },
   {
     title:
-      "How many of these collectors can fill in the blank to make this code compile?1. toArrayList() 2. toList() 3. toMap()",
+      "How many of these collectors can fill in the blank to make this code compile?",
     code:
       "<code>Stream&lt;Character&gt; chars = Stream.of(</code>\n<code>   'o', 'b', 's', 't', 'a', 'c', 'l', 'e');</code>\n<code>chars.map(c -&gt; c).collect(Collectors.____________ );</code>",
-    answers: ["None", "One", "Two", "Three"]
+    answers: ["None", "One", "Two", "Three"],
+    ol: ["toArrayList()", "toList()", "toMap()"]
   },
   {
     title: "What does the following output?",
@@ -84,9 +86,14 @@ const qzString = [
   },
   {
     title:
-      "Which of the following creates an Optional that returns true when calling opt.isPresent()? 1.Optional<String> opt = Optional.empty();2.Optional<String> opt = Optional.of(null);3.Optional<String> opt = Optional.ofNullable(null);      ",
+      "Which of the following creates an Optional that returns true when calling opt.isPresent()? ",
     code: null,
-    answers: ["I", "I and II", "I and III", "None of the above"]
+    answers: ["I", "I and II", "I and III", "None of the above"],
+    ol: [
+      "Optional<String> opt = Optional.empty();",
+      "Optional<String> opt = Optional.of(null);",
+      "Optional<String> opt = Optional.ofNullable(null);"
+    ]
   },
   {
     title: "What is the output of the following?",
@@ -191,11 +198,16 @@ const qzString = [
     answers: ["findAny()", "first()", "min()", "None of the above"]
   },
   {
-    title:
-      "Which of the following can be the type for x?1.List<String> 2.Optional<Collection> 3.Optional<String> 4.Stream<Collection>",
+    title: "Which of the following can be the type for x?",
     code:
       "<code>private static void spot(____________ x) {</code>\n<code>   x.filter(y -&gt; ! y.isEmpty())</code>\n<code>     .map(y -&gt; 8)</code>\n<code>     .ifPresent(System.out::println);</code>\n<code>}</code>",
-    answers: ["I", "IV", "II and III", "II and IV"]
+    answers: ["I", "IV", "II and III", "II and IV"],
+    ol: [
+      "List<String>",
+      "Optional<Collection>",
+      "Optional<String>",
+      "Stream<Collection>"
+    ]
   },
   {
     title: "Which can fill in the blank to have the code print true?",
@@ -256,10 +268,11 @@ const qzString = [
   },
   {
     title:
-      "How many of the following can fill in the blank to have the code print the single digit 9?1.mapToDouble 2.mapToInt 3.mapToLong",
+      "How many of the following can fill in the blank to have the code print the single digit 9?",
     code:
       "<code>LongStream stream = LongStream.of(9);</code>\n<code>stream.____________(p -&gt; p).forEach(System.out::print);</code>",
-    answers: ["None", "One", "Two", "Three"]
+    answers: ["None", "One", "Two", "Three"],
+    ol: ["mapToDouble", "mapToInt", "mapToLong"]
   },
   {
     title:
@@ -329,9 +342,14 @@ const qzString = [
   },
   {
     title:
-      "When working with a Stream<String>, which of these types can be returned from the collect() terminal operator by passing arguments to Collectors.groupingBy()? 1.Map<Integer, List<String>> 2.Map<Boolean, HashSet<String>> 3.List<String>",
+      "When working with a Stream<String>, which of these types can be returned from the collect() terminal operator by passing arguments to Collectors.groupingBy()?",
     code: null,
-    answers: ["I", "II", "I and II", "I, II, and III"]
+    answers: ["I", "II", "I and II", "I, II, and III"],
+    ol: [
+      "Map<Integer, List<String>>",
+      "Map<Boolean, HashSet<String>>",
+      "List<String>"
+    ]
   },
   {
     title:
@@ -469,7 +487,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a15[index]),
-    explain: a15[index]
+    explain: a15[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs

@@ -11,10 +11,10 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which methods listed below are found in the NIO.2 Path interface? (1)getRoot()(2)isDirectory()(3)listFiles()(4)toRealPath()",
+    title: "Which methods listed below are found in the NIO.2 Path interface?",
     code: null,
-    answers: ["I only", "I, II, and III", "I and IV", "II and III"]
+    answers: ["I only", "I, II, and III", "I and IV", "II and III"],
+    ol: ["getRoot()", "isDirectory()", "listFiles()", "toRealPath()"]
   },
   {
     title:
@@ -93,10 +93,10 @@ const qzString = [
     ]
   },
   {
-    title:
-      "Which methods listed below are found in the NIO.2 Files class?(1)isSameFile()(2)length()(3)relativize()(4)mkdir()",
+    title: "Which methods listed below are found in the NIO.2 Files class?",
     code: null,
-    answers: ["I only", "I, II, and IV", "II and III", "IV only"]
+    answers: ["I only", "I, II, and IV", "II and III", "IV only"],
+    ol: ["isSameFile()", "length()", "relativize()", "mkdir()"]
   },
   {
     title:
@@ -112,10 +112,15 @@ const qzString = [
   },
   {
     title:
-      "Which of the following can be filled into the blank that would allow the method to compile?(1)new File(fileName).toPath()(2)new Path(fileName)(3)FileSystems.getDefault().getPath(fileName)",
+      "Which of the following can be filled into the blank that would allow the method to compile?",
     code:
       "<code>public String getPathName(String fileName) {</code>\n<code>   final Path p = ____________________;</code>\n<code>   return p.getFileName();</code>\n<code>}</code>",
-    answers: ["I and II", "I and III", "II", "None of the above"]
+    answers: ["I and II", "I and III", "II", "None of the above"],
+    ol: [
+      "new File(fileName).toPath()",
+      "new Path(fileName)",
+      "FileSystems.getDefault().getPath(fileName)"
+    ]
   },
   {
     title: "Which statement about the following class is correct?",
@@ -276,9 +281,15 @@ const qzString = [
   },
   {
     title:
-      'Which of the following statements, when run independently, produces a NullPointerException at runtime? 1.Paths. get("../sang").getParent().getParent()2. Paths.get("/sing"). getParent().getRoot()3. Paths .get("/song").getRoot(). getRoot()4.Paths. get("../sung").getRoot().getParent()',
+      "Which of the following statements, when run independently, produces a NullPointerException at runtime? ",
     code: null,
-    answers: ["I and III", "I and IV", "II and III", "IV only"]
+    answers: ["I and III", "I and IV", "II and III", "IV only"],
+    ol: [
+      'Paths.get("../sang").getParent().getParent()',
+      'Paths.get("/sing").getParent().getRoot()',
+      'Paths.get("/song").getRoot().getRoot()',
+      'Paths.get("../sung").getRoot().getParent()'
+    ]
   },
   {
     title: "Which statement about the following Finalize class is correct?",
@@ -511,7 +522,8 @@ const quizs = qzString.map((qz, index) => {
     code: qz["code"],
     imageUrl: null,
     answerArray: mapAnswers(qz["answers"], a19[index]),
-    explain: a19[index]
+    explain: a19[index],
+    ol: qz["ol"]
   };
 });
 // window.quizs = quizs
