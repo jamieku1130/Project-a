@@ -11,7 +11,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which statements about executing the following TicketTaker application multiple times are true? 1.The class compiles and runs without throwing an exception.2.The first number printed is consistently 10. 3.The second number printed is consistently 5. ",
     code:
       '<code>package performance;</code>\n<code>import java.util.concurrent.atomic.*;</code>\n<code>import java.util.stream.*;</code>\n<code>public class TicketTaker {</code>\n<code>   long ticketsSold;</code>\n<code>   final AtomicInteger ticketsTaken;</code>\n<code>   public TicketTaker() {</code>\n<code>      ticketsSold = 0;</code>\n<code>      ticketsTaken = new AtomicInteger(0);</code>\n<code>   }</code>\n<code>   public void performJob() {</code>\n<code>      IntStream.iterate(1, p -&gt; p+1)</code>\n<code>         .parallel()</code>\n<code>         .limit(10)</code>\n<code>         .forEach(i -&gt; ticketsTaken.getAndIncrement());</code>\n<code>      IntStream.iterate(1, q -&gt; q+1)</code>\n<code>         .limit(5)</code>\n<code>         .parallel()</code>\n<code>         .forEach(i -&gt; ++ticketsSold);</code>\n<code>      System.out.print(ticketsTaken+" "+ticketsSold);</code>\n<code>   }</code>\n<code>   public static void main(String[] matinee) {</code>\n<code>      new TicketTaker().performJob();</code>\n<code>   }</code>\n<code>}</code>',
     answers: ["I only", "I and II", "I, II, and III", "None of the above"]
@@ -33,7 +34,7 @@ const qzString = [
     code: null,
     answers: [
       "newSingleThreadExecutor()",
-      "newSingleThreadScheduledExecutor()",
+      "newSingle ThreadScheduledExecutor()",
       "newCachedThreadPool()",
       "None of these would work."
     ]
@@ -75,7 +76,7 @@ const qzString = [
       "newFixedScheduledThreadPool()",
       "newFixedThreadPool()",
       "newSingleThreadExecutor()",
-      "newSingleThreadScheduledExecutor()"
+      "newSingle ThreadScheduledExecutor()"
     ]
   },
   {
@@ -152,7 +153,7 @@ const qzString = [
     title:
       "The following diagrams represent the order of read/write operations of two threads sharing a common variable. Each thread first reads the value of the variable from memory and then writes a new value of the variable back to memory. Which diagram demonstrates proper synchronization?",
     code: null,
-    answers: ["", "", "", ""]
+    answers: ["1", "2", "3", "4"]
   },
   {
     title: "What is the output of the following application?",
@@ -492,7 +493,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[15].imageUrl = "./images/image-ocp-ch20-16.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
