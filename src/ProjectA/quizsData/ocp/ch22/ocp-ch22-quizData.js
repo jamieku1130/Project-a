@@ -37,7 +37,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which interfaces does Properties implement? 1.Hashtable 2.HashMap 3.Map",
     code: null,
     answers: ["III", "I and II", "I and III", "II and III"]
   },
@@ -510,8 +511,8 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
-//   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
+quizs[23].imageUrl = "./images/image-ocp-ch22-24.png";
+quizs[30].imageUrl = "./images/image-ocp-ch22-31.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
 export default quizs;

@@ -92,7 +92,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      " How many of the following can fill in the blank to make this code compile?1.LocalDate now = LocalDate.now();2.LocalDate now = new LocalDate();3.LocalDateTime now = LocalDateTime.now();4.LocalDateTime now = new LocalDateTime();5.ZonedDate now = ZonedDate.now();6.ZonedDate now = new ZonedDate();",
     code:
       "<code>public boolean isItMyBirthday(LocalDateTime dateTime) {</code>\n<code>   ________________________________________  </code>\n<code>   return now.getMonth() == dateTime.getMonth()</code>\n<code>      &amp;&amp; now.getDayOfMonth() == dateTime.getDayOfMonth();</code>\n<code>}</code>",
     answers: ["None", "One", "Two", "Three", "Four", "Five"]
@@ -125,7 +126,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which of the following cannot be instantiated directly by the caller using the constructor?1.Locale.2.Properties3.ResourceBundle",
     code: null,
     answers: ["I", "II", "III", "I, II", "I, III", "II, III"]
   },
@@ -156,7 +158,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which of the following are JDBC interfaces in the java.sql package?1.Driver2.DriverManager.3.Query4.ResultSet ",
     code: null,
     answers: ["I, III", "I, IV", "II, III", "II, IV", "I, II, III", "I, II, IV"]
   },
@@ -200,7 +203,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which statements about the following class are true?1.The class compiles.2.The design protects the password by clearing it from memory after it is entered.3.The class may throw an exception at runtime. ",
     code:
       '<code>package secure;</code>\n<code>import java.io.*;</code>\n<code>public class Login {</code>\n<code>   public void clearPassword(char[] password) {</code>\n<code>      for(int i=0; i&lt;password.length; i++) {</code>\n<code>         password[i] = 0;</code>\n<code>      }</code>\n<code>   }</code>\n<code>   public String getPassword() {</code>\n<code>      Console c = System.console();</code>\n<code>      final char[] pass = c.readPassword("Enter your password: ");</code>\n<code>      StringBuilder sb = new StringBuilder();</code>\n<code>      for(char p : pass) {</code>\n<code>         sb.append(p);</code>\n<code>      }</code>\n<code>      clearPassword(pass);</code>\n<code>      return sb.toString();</code>\n<code>   }</code>\n<code>   public static void main(String[] webLogin) {</code>\n<code>      String pass = new Login().getPassword();</code>\n<code>   }</code>\n<code>}</code>',
     answers: [
@@ -217,10 +221,10 @@ const qzString = [
     code:
       '<code>class Runner {</code>\n<code>   private int numberMinutes;</code>\n<code>   public Runner(int n) {</code>\n<code>      numberMinutes = n;</code>\n<code>   }</code>\n<code><span epub:type="pagebreak" id="Page_395"></span>   public int getNumberMinutes() {</code>\n<code>      return numberMinutes;</code>\n<code>   }</code>\n<code>}</code>\n<code>public class Marathon {</code>\n<code>   public static void main(String[] args) {</code>\n<code>      Stream&lt;Runner&gt; runners = Stream.of(new Runner(183),</code>\n<code>         new Runner(161), new Runner(201));</code>\n<code>      OptionalInt opt = runners.____________________;</code>\n<code>   }</code>\n<code>}</code>',
     answers: [
-      "map(Runner::getNumberMinutes) .peek(System.out::println) .max()",
-      "mapToInt(Runner::getNumberMinutes) .peek(System.out::println) .max()",
-      "peek(System.out::println) .mapToInt(Runner::getNumberMinutes) .max()",
-      "peek(System.out::println) .mapToInt(Runner::getNumberMinutes) .max()",
+      "map (Runner::getNumberMinutes) .peek (System.out::println) .max()",
+      "mapToInt (Runner::getNumberMinutes) .peek (System.out::println) .max()",
+      "peek (System.out::println) .mapToInt (Runner::getNumberMinutes) .max()",
+      "peek (System.out::println) .mapToInt (Runner::getNumberMinutes) .max()",
       "None of the above"
     ]
   },
@@ -357,7 +361,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which of the following can be independently inserted into the blank so the code can run without error for at least one SQL query?1.System.out.println(rs.getInt(1));2.rs.next(); System.out.println(rs.getInt(1));3.if (rs.next()) System.out.println(rs.getInt(1)); ",
     code:
       "<code>private static void choices(Connection conn, String sql)       throws SQLException {</code>\n<code>   try (Statement stmt = conn.createStatement();</code>\n<code>       ResultSet rs = stmt.executeQuery(sql)) {</code>\n<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;____________________</code>\n<code>       </code>\n<code>   }</code>\n<code>}</code>",
     answers: [
@@ -408,7 +413,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which are the minimum changes needed to make this class immutable? 1.Make species private and final.2.Make the getter method final.3.Remove the setter method.",
     code:
       "<code>1:   public class Tree {</code>\n<code>2:      String species;</code>\n<code>3:      public Tree(String species) {</code>\n<code>4:         this.species = species;</code>\n<code>5:      }</code>\n<code>6:      public String getSpecies() {</code>\n<code>7:        return species;</code>\n<code>8:      }</code>\n<code>9:      private final void setSpecies(String newSpecies) {</code>\n<code>10:        species = newSpecies;</code>\n<code>11:    }</code>\n<code>12:  }</code>",
     answers: [
@@ -508,7 +514,8 @@ const qzString = [
     answers: ["One", "Two", "Three", "Four", "Five", "Six"]
   },
   {
-    title: " ",
+    title:
+      "Which are the minimum changes needed to properly implement the singleton pattern?1.Add a private constructor.2.Remove the setter method.3.Remove the static block and change line 2 to instantiate Bookmark. ",
     code:
       "<code>1:   public class Bookmark {</code>\n<code>2:      private static Bookmark bookmark;</code>\n<code>3:      private int pageNumber;</code>\n<code>4:      static {</code>\n<code>5:        bookmark = new Bookmark();</code>\n<code>6:      }</code>\n<code>7:      public static Bookmark getInstance() {</code>\n<code>8:         return bookmark;</code>\n<code>9:      }</code>\n<code>10:     public int getPageNumber() {</code>\n<code>11:        return pageNumber;</code>\n<code>12:     }</code>\n<code>13:     public void setPageNumber(int newNumber) {</code>\n<code>14:        pageNumber = newNumber;</code>\n<code>15:     }</code>\n<code>16:  }</code>",
     answers: [
@@ -776,7 +783,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "How many of the following pairs of values can fill in the blanks to comply with the contract of the hashCode() and equals() methods?1.5, false2.5, true3.new Random().nextInt(), false4.new Random().nextInt(), true ",
     code:
       "<code>class Sticker {</code>\n<code>   @Override</code>\n<code>   public int hashCode() {</code>\n<code>      return _______________ ;</code>\n<code>   }</code>\n<code>   @Override</code>\n<code>   public boolean equals(Sticker o) {</code>\n<code>      return _______________;</code>\n<code>   }</code>\n<code>}</code>",
     answers: [
@@ -801,7 +809,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which statements about the following application are true?1.The lambda expression for dress on line 7 compiles without issue.2.The lambda expression for addDragon on line 8 compiles without issue.3.Not counting the lambda expressions on lines 7 and 8, the code does not contain any compilation errors. ",
     code:
       "<code>1:  package armory;</code>\n<code>2:  import java.util.function.*;</code>\n<code>3:  class Shield {}</code>\n<code>4:  public class Sword {</code>\n<code>5:     public class Armor {</code>\n<code>6:       int count;</code>\n<code>7:        public final Function&lt;Shield,Sword,Armor&gt; dress = (h,w) ‐&gt; new Armor();</code>\n<code>8:       public final IntSupplier&lt;Integer&gt; addDragon = () ‐&gt; count++;</code>\n<code>9:     }</code>\n<code>10:    public static void main(String[] knight) {</code>\n<code>11:      final Armor a = new Armor();</code>\n<code>12:      a.dress.apply(new Shield(), new Sword());</code>\n<code>13:      a.addDragon.getAsInt();</code>\n<code>14:    }</code>\n<code>15: }</code>",
     answers: [
@@ -955,7 +964,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "Which statements about the following application are true?1.The scheduleWithFixedDelay() method call compiles.2.The scheduleAtFixedRate() method call compiles.3.The execute() method call compiles. ",
     code:
       '<code>package party;</code>\n<code>import java.util.concurrent.*;</code>\n<code>public class Plan {</code>\n<code>   private ExecutorService service = Executors.newCachedThreadPool();</code>\n<code>   public void planEvents() {</code>\n<code>      service.scheduleWithFixedDelay(</code>\n<code>            () -&gt; System.out.print("Check food stock"),</code>\n<code>            1, TimeUnit.HOURS);</code>\n<code>      service.scheduleAtFixedRate(</code>\n<code>            () -&gt; System.out.print("Check drink stock"),</code>\n<code>            1, 1000, TimeUnit.SECONDS);</code>\n<code>      service.execute(() -&gt; System.out.print("Take out trash"));</code>\n<code>   }</code>\n<code>}</code>',
     answers: [
@@ -993,7 +1003,8 @@ const qzString = [
     ]
   },
   {
-    title: " ",
+    title:
+      "How many of the following could be valid JDBC URL formats for an imaginary driver named magic and a database named box?1.jdbc;box;magic2.jdbc;magic;@127.0.0.1:12343.jdbc;magic;//@127.0.0.1:12344.jdbc;magic;127.0.0.1:1234/box5.magic;jdbc;127.0.0.1:1234/box ",
     code: null,
     answers: ["None", "One", "Two", "Three", "Four", "Five"]
   },
@@ -1194,8 +1205,8 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
-//   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
+quizs[30].imageUrl = "./images/image-ocp-ch23-31.png";
+quizs[43].imageUrl = "./images/image-ocp-ch23-44.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
 export default quizs;
