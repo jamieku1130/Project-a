@@ -15,6 +15,7 @@ import AnswerCard from "../AnswerCard";
 import List from "../List";
 import Header from "../Header";
 import Back from "../Back";
+import BallList from "../BallList";
 import "../../../App.css";
 import helpFunction from "../../quizsData/helperFunction";
 
@@ -82,69 +83,79 @@ class Main extends Component {
         />
         <Header />
 
-        <div className="App-main-container">
-          <div className="main-section">
-            <Back className="return-icon" />
-            <h1 style={{ textAlign: "center" }}>{this.state.title}</h1>
-            <p style={{ marginTop: "10px" }}>進度：{percentage.toFixed(1)}%</p>
-            <Line strokeWidth="4" percent={percentage} />
-            <QuestionCard
-              title={qObj.title}
-              id={qObj.id}
-              code={qObj.code}
-              imageUrl={qObj.imageUrl}
-            />
+        <div className="desktop">
+          <div className="App-main-container">
+            <div className="main-section">
+              <Back className="return-icon" />
+              <h1 style={{ textAlign: "center" }}>{this.state.title}</h1>
+              <p style={{ marginTop: "10px" }}>
+                進度：{percentage.toFixed(1)}%
+              </p>
+              <Line strokeWidth="4" percent={percentage} />
+              <QuestionCard
+                title={qObj.title}
+                id={qObj.id}
+                code={qObj.code}
+                imageUrl={qObj.imageUrl}
+              />
 
-            <div className="answers">
-              <ul>
-                {qObj.answerArray.map((answerObj, i) => (
-                  <AnswerCard
-                    key={answerObj.answer + i}
-                    answerIndex={i}
-                    answerObj={answerObj}
-                    id={qObj.id}
-                    answered={answerStatus[index].isAnswered}
-                    answer={answerStatus[index].answer}
-                  />
-                ))}
-              </ul>
+              <div className="answers">
+                <ul>
+                  {qObj.answerArray.map((answerObj, i) => (
+                    <AnswerCard
+                      key={answerObj.answer + i}
+                      answerIndex={i}
+                      answerObj={answerObj}
+                      id={qObj.id}
+                      answered={answerStatus[index].isAnswered}
+                      answer={answerStatus[index].answer}
+                    />
+                  ))}
+                </ul>
+              </div>
+              <div className="progress-control">
+                <div>
+                  <button
+                    onClick={() => this.markButtonHandler(qObj.id)}
+                    style={
+                      answerStatus[qObj.id].isMarked
+                        ? { color: "orange" }
+                        : null
+                    }
+                  >
+                    <FontAwesomeIcon icon={faStar} size="lg" />
+                  </button>
+                </div>
+                <div>
+                  <button
+                    onClick={this.backButtonHandler}
+                    disabled={qObj.id === 0}
+                  >
+                    <FontAwesomeIcon icon={faArrowCircleLeft} size="lg" />
+                  </button>
+                </div>
+                <div>
+                  <button
+                    onClick={this.nextButtonHandler}
+                    disabled={index === total - 1}
+                  >
+                    <FontAwesomeIcon icon={faArrowCircleRight} size="lg" />
+                  </button>
+                </div>
+                <div className="list-button">
+                  <button onClick={this.indexButtonHanlder}>
+                    <FontAwesomeIcon icon={faListAlt} size="lg" />
+                  </button>
+                </div>
+              </div>
+              {answerStatus[qObj.id].isAnswered ? (
+                <AnalysisCard explain={qObj.explain} />
+              ) : null}
             </div>
-            <div className="progress-control">
-              <div>
-                <button
-                  onClick={() => this.markButtonHandler(qObj.id)}
-                  style={
-                    answerStatus[qObj.id].isMarked ? { color: "orange" } : null
-                  }
-                >
-                  <FontAwesomeIcon icon={faStar} size="lg" />
-                </button>
-              </div>
-              <div>
-                <button
-                  onClick={this.backButtonHandler}
-                  disabled={qObj.id === 0}
-                >
-                  <FontAwesomeIcon icon={faArrowCircleLeft} size="lg" />
-                </button>
-              </div>
-              <div>
-                <button
-                  onClick={this.nextButtonHandler}
-                  disabled={index === total - 1}
-                >
-                  <FontAwesomeIcon icon={faArrowCircleRight} size="lg" />
-                </button>
-              </div>
-              <div>
-                <button onClick={this.indexButtonHanlder}>
-                  <FontAwesomeIcon icon={faListAlt} size="lg" />
-                </button>
-              </div>
-            </div>
-            {answerStatus[qObj.id].isAnswered ? (
-              <AnalysisCard explain={qObj.explain} />
-            ) : null}
+          </div>
+          <div className="ball-list-container">
+            <h2>點選以下圈圈可以直接跳至對應的題目</h2>
+            <BallList />
           </div>
         </div>
       </div>

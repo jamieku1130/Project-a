@@ -7,3 +7,14 @@ export const format = time => {
   hours = hours.toString().length === 1 ? "0" + hours : hours;
   return hours + " : " + minutes + " : " + seconds;
 };
+
+export const truncateWords = (sentence, amount, tail) => {
+  const words = sentence.split(" ");
+
+  if (amount >= words.length) {
+    return sentence;
+  }
+
+  const truncated = words.slice(0, amount);
+  return `${truncated.join(" ")}${tail}`;
+};

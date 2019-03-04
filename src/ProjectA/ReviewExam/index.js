@@ -21,7 +21,6 @@ class ReviewExam extends React.Component {
   render() {
     const { quizs, answerStatus, total } = this.props;
     const { count } = this.state;
-    console.log(quizs, answerStatus, total);
     return (
       <div className="App">
         <Header />

@@ -201,6 +201,10 @@ pre {
     /* color: orange; */
 }
 
+.ball-list-container {
+    display: none;
+}
+
 .list-container ul {
     list-style-type: none;
     padding: 0;
@@ -273,6 +277,8 @@ pre {
 .wrong {
     background-color: rgb(206, 63, 37);
 }
+
+
 
 /*  Landing page */
 
@@ -689,7 +695,7 @@ pre {
     }
 
     .main-section .return-icon {
-        top: 0px;
+        top: -20px;
     }
 
     .image-container {
@@ -779,13 +785,25 @@ pre {
 
     /* main page */
 
+    .desktop {
+        width: 100%;
+        display: flex;
+    }
+
+    .ball-list-container {
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+
     .App-main-container {
         margin: 20px auto;
         width: 720px;
+        flex-shrink: 60%;
     }
 
     .main-section .return-icon {
-        top: 0px;
+        top: -30px;
     }
 
     .image-container {
@@ -811,6 +829,10 @@ pre {
 
     .progress-control {
         margin: 0 auto 30px auto;
+    }
+
+    .list-button button {
+        display: none;
     }
 
     .list-container button {

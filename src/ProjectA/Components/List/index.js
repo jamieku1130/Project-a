@@ -4,17 +4,7 @@ import connect from "./connect";
 import ListItem from "../ListItem";
 import Header from "../Header";
 import LinkControl from "../LinkControl";
-
-const truncateWords = (sentence, amount, tail) => {
-  const words = sentence.split(" ");
-
-  if (amount >= words.length) {
-    return sentence;
-  }
-
-  const truncated = words.slice(0, amount);
-  return `${truncated.join(" ")}${tail}`;
-};
+import { truncateWords } from "../Helper";
 
 const FlyOutMenu = styled.div`
   width: 100vw;
