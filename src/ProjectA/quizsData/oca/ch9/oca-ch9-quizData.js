@@ -162,7 +162,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which of these classes are in the java.util package? 1.ArrayList 2.LocalDate. 3.String",
     code: null,
     answers: ["I only", "II only", "I and II", "I, II, and III"]
   },
@@ -398,7 +399,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which of the following types can you pass as a parameter to the replace() method on the String class? 1.char 2.String 3.StringBuilder",
     code: null,
     answers: ["I", "I and II", "II and III", "I, II, and III"]
   },
@@ -551,7 +553,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[24].imageUrl = "./images/image-oca-ch9-25.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
