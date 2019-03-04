@@ -28,7 +28,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which symbol(s) can be used to separate exception types in a multi-catch statement? (1)& (2)| (3)||",
     code: null,
     answers: ["II only", "III only", "II and III", "I, II, and III"]
   },
@@ -122,7 +123,8 @@ const qzString = [
     answers: ["One", "Two", "Three", "The code does not compile."]
   },
   {
-    title: "",
+    title:
+      "Which exception classes, when inserted into the blank in the Problems class, allow the code to compile? 1.Exception 2.MissingMoneyException 3.MissingMoneyException, MissingFoodException",
     code:
       '<code>package more;</code>\n<code>class MissingMoneyException extends Exception {}</code>\n<code>class MissingFoodException extends Exception {}</code>\n<code>public class Problems {</code>\n<code>   public void doIHaveAProblem() throws MissingMoneyException,          MissingFoodException {</code>\n<code>      System.out.println("No problems");</code>\n<code>   }</code>\n<code>   public static void main(String[] lots) throws  ________________{</code>\n<code>      try {</code>\n<code>         final Problems p = new Problems();</code>\n<code>         p.doIHaveAProblem();</code>\n<code>      } catch (Exception e) {</code>\n<code><span epub:type="pagebreak" id="Page_277"></span>         throw e;</code>\n<code>      }</code>\n<code>   }</code>\n<code>}</code>',
     answers: ["I only", "III only", "I and III", "I, II, and II"]
@@ -277,7 +279,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which statements about the following classes are true?(1).Four of the classes are checked exceptions.(2)Two of the classes are unchecked exceptions.(3)None of the class declarations contain any compilation errors.",
     code:
       "<code>public class Dopey extends Grumpy {}</code>\n<code>public class Grumpy extends Exception {}</code>\n<code>public class Happy extends IOException {}</code>\n<code>public class Sleepy extends IllegalStateException {}</code>\n<code>public class Sneezy extends Throwable {}</code>",
     answers: ["I only", "I and III", "II and III", "I, II, and III"]
@@ -481,7 +484,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[7].imageUrl = "./images/image-ocp-ch16-8.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
