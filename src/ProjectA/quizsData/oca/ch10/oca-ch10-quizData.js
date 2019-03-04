@@ -223,7 +223,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which keywords are required with a try statement? 1.finalize 2.catch 3.throws 4.finally",
     code: null,
     answers: [
       "I only",
@@ -415,7 +416,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which of the following statements about Java are true? 1.The java command uses . to separate packages. 2.Java supports functional programming. 3.Java is object oriented. 4.Java supports polymorphism.",
     code: null,
     answers: [
       "I only",
