@@ -11,7 +11,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which methods listed below are found in the NIO.2 Path interface? (1)getRoot()(2)isDirectory()(3)listFiles()(4)toRealPath()",
     code: null,
     answers: ["I only", "I, II, and III", "I and IV", "II and III"]
   },
@@ -92,7 +93,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which methods listed below are found in the NIO.2 Files class?(1)isSameFile()(2)length()(3)relativize()(4)mkdir()",
     code: null,
     answers: ["I only", "I, II, and IV", "II and III", "IV only"]
   },
@@ -109,7 +111,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which of the following can be filled into the blank that would allow the method to compile?(1)new File(fileName).toPath()(2)new Path(fileName)(3)FileSystems.getDefault().getPath(fileName)",
     code:
       "<code>public String getPathName(String fileName) {</code>\n<code>   final Path p = ____________________;</code>\n<code>   return p.getFileName();</code>\n<code>}</code>",
     answers: ["I and II", "I and III", "II", "None of the above"]
@@ -272,7 +275,8 @@ const qzString = [
     answers: ["None", "One", "Six", "Thirty-one"]
   },
   {
-    title: "",
+    title:
+      'Which of the following statements, when run independently, produces a NullPointerException at runtime? 1.Paths. get("../sang").getParent().getParent()2. Paths.get("/sing"). getParent().getRoot()3. Paths .get("/song").getRoot(). getRoot()4.Paths. get("../sung").getRoot().getParent()',
     code: null,
     answers: ["I and III", "I and IV", "II and III", "IV only"]
   },
@@ -511,7 +515,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[21].imageUrl = "./images/image-ocp-ch19-22.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
