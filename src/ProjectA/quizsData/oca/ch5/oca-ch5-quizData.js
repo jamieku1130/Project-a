@@ -40,12 +40,14 @@ const qzString = [
     answers: ["do-while loop", "for (traditional)", "for-each", "while"]
   },
   {
-    title: "",
+    title:
+      "Which of the following statements is/are true? 1.A traditional for loop can iterate through an array starting from index 0. 2.A traditional for loop can iterate through an array starting from the end. ",
     code: null,
     answers: ["Only I", "Only II", "Both statements", "Neither statement"]
   },
   {
-    title: "",
+    title:
+      "Which of the following statements is/are true? 1.A for-each loop can iterate through an array starting from index 0. 2.A for-each loop can iterate through an array starting from the end.",
     code: null,
     answers: ["Only I", "Only II", "Both statements", "Neither statement"]
   },
@@ -550,7 +552,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[22].imageUrl = "./images/image-oca-ch5-23.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
