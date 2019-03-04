@@ -233,7 +233,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which of the following method references can be passed to a method that takes Consumer<Object> as an argument?1.ArrayList::new2.String::new3.System.out::println",
     code: null,
     answers: ["I only", "I, II, and III", "I and III", "III only"]
   },
@@ -375,7 +376,8 @@ const qzString = [
     answers: ["BiConsumer", "BiFunction", "BiPredicate", "DoubleBinaryOperator"]
   },
   {
-    title: "",
+    title:
+      "Which of the following lambda expressions can be passed to a method that takes IntFunction<Integer> as an argument? 1.(Integer f) -> f 2.(v) -> null 3.s -> s",
     code: null,
     answers: [
       "I, II, and III",
@@ -501,8 +503,8 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
-//   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
-//   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
+quizs[14].imageUrl = "./images/image-ocp-ch14-15.png";
+quizs[15].imageUrl = "./images/image-ocp-ch14-16.png";
+quizs[19].imageUrl = "./images/image-ocp-ch14-20.png";
 
 export default quizs;
