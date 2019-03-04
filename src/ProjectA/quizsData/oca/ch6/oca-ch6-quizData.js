@@ -133,7 +133,7 @@ const qzString = [
       "Given the following application, which diagram best represents the state of the mySkier, mySpeed, and myName variables in the main() method after the call to the slalom() method?",
     code:
       '<code>package slopes;</code>\n<code>public class Ski {</code>\n<code>   private int age = 18;</code>\n<code>   private static void slalom(Ski racer, int[] speed, String name) {</code>\n<code>      racer.age = 18;</code>\n<code>      name = "Wendy";</code>\n<code>      speed = new int[1];</code>\n<code>      speed[0] = 11;</code>\n<code>      racer = null;</code>\n<code>   }</code>\n<code>   public static void main(String... mountain) {</code>\n<code>      final Ski mySkier = new Ski();</code>\n<code>      mySkier.age = 16;</code>\n<code>      final int[] mySpeed = new int[1];</code>\n<code>      final String myName = "Rosie";</code>\n<code>      slalom(mySkier,mySpeed,myName);</code>\n<code>   }</code>\n<code>}</code>',
-    answers: ["", " ", " ", " "]
+    answers: ["1", "2", "3", "4"]
   },
   {
     title:
@@ -216,7 +216,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which statement(s) about the following class would help to properly encapsulate the data in the class? 1.Change the access modifier of strength to private. 2.Add a getter method for material. 3.Add a setter method for material.",
     code:
       "<code>package shield;</code>\n<code>public class Protect {</code>\n<code>   private String material;</code>\n<code>   protected int strength;</code>\n<code>&nbsp;</code>\n<code>   public int getStrength() {</code>\n<code>      return strength;</code>\n<code>   }</code>\n<code>   public void setStrength(int strength) {</code>\n<code>      this.strength = strength;</code>\n<code>   }</code>\n<code>}</code>",
     answers: [
@@ -313,7 +314,8 @@ const qzString = [
     ]
   },
   {
-    title: "",
+    title:
+      "Which of the following statements about overloaded methods are true? 1.Overloaded methods must have the same name. 2.Overloaded methods must have the same return type. 3.Overloaded methods must have a different list of parameters.",
     code: null,
     answers: ["I", "I and II", "I and III", "I, II, and III"]
   },
@@ -568,7 +570,7 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
+quizs[14].imageUrl = "./images/image-oca-ch6-15.png";
 //   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
