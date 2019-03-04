@@ -13,6 +13,14 @@ const BallStyle = styled.div`
   border-radius: 50%;
   color: white;
   font-size: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  &:hover {
+    transform: scale(1.1);
+    color: goldenrod;
+    font-weight: 700;
+  }
 `;
 
 const Ball = ({ children, answerStatus, jumpToQuiz, handleMouseOver }) => {

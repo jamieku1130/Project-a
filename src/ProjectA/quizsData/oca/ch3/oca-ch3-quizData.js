@@ -102,7 +102,12 @@ const qzString = [
       "A case value must match the data type of the switch variable, or be able to be promoted to that type."
     ]
   },
-  { title: "", code: null, answers: ["--", "++", "||", "&&"] },
+  {
+    title:
+      "Given the following truth table, which operator for the boolean expressions x and y corresponds to this relationship?",
+    code: null,
+    answers: ["--", "++", "||", "&&"]
+  },
   {
     title: "What is the output of the following code snippet?",
     code:
@@ -248,7 +253,8 @@ const qzString = [
     answers: ["0", "12", "14", "None of the above"]
   },
   {
-    title: "",
+    title:
+      "Given the following truth table, the boolean variables p and q, and the expression p ^ q, what are the missing values in the truth table, starting with the first column?",
     code: null,
     answers: [
       "false and true",
@@ -374,7 +380,8 @@ const qzString = [
     answers: ["2", "11", "16", "None of the above"]
   },
   {
-    title: "",
+    title:
+      "Given the following truth table, the boolean variables w and z, and the expression w || z, what are the missing values in the truth table, starting with the first row?",
     code: null,
     answers: [
       "false and false",
@@ -505,8 +512,9 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
-//   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
-//   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
+quizs[13].imageUrl = "./images/image-oca-ch3-14.png";
+quizs[32].imageUrl = "./images/image-oca-ch3-33.png";
+quizs[36].imageUrl = "./images/image-oca-ch3-37.png";
+quizs[47].imageUrl = "./images/image-oca-ch3-48.png";
 
 export default quizs;
