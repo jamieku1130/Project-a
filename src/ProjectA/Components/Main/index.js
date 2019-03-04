@@ -154,7 +154,9 @@ class Main extends Component {
             </div>
           </div>
           <div className="ball-list-container">
-            <h2>點選以下圈圈可以直接跳至對應的題目</h2>
+            <h2 style={{ width: "200px", marginRight: "100px" }}>
+              點選以下圈圈可以直接跳至對應題目
+            </h2>
             <BallList />
           </div>
         </div>

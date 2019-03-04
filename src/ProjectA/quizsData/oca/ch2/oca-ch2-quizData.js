@@ -241,7 +241,8 @@ const qzString = [
     ]
   },
   {
-    title: "Which of the following correctly assigns animal to both variables?",
+    title:
+      'Which of the following correctly assigns animal to both variables? 1.String cat = "animal", dog = "animal"; 2. String cat = "animal"; dog = "animal" 3.String cat, dog = "animal"; 4.String cat, String dog = "animal";',
     code: null,
     answers: ["I", "I, II", "I, III", "I, II, III, IV"]
   },
@@ -317,7 +318,8 @@ const qzString = [
     answers: ["None", "One", "Two", "Three"]
   },
   {
-    title: "",
+    title:
+      "Which pairs of statements can accurately fill in the blanks in this table?",
     code: null,
     answers: [
       "Blank 1: an instance method only, Blank 2: a static method only",
@@ -535,8 +537,8 @@ const quizs = qzString.map((qz, index) => {
   };
 });
 // window.quizs = quizs
-//   quizs[1].imageUrl = "./images/image-oca-ch1-2.png";
-//   quizs[9].imageUrl = "./images/image-oca-ch1-10.png";
+quizs[18].imageUrl = "./images/image-oca-ch2-19.png";
+quizs[38].imageUrl = "./images/image-oca-ch2-39.png";
 //   quizs[48].imageUrl = "./images/image-oca-ch1-49.png";
 
 export default quizs;

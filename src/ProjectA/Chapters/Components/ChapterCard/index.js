@@ -112,7 +112,7 @@ class ChapterCard extends Component {
           <h5 className="text-box-secondary">{title}</h5>
         </TextBox>
         <PercentageBox>
-          <p className="percentage-text">{percentage.toFixed(1)}%</p>
+          <p className="percentage-text">{percentage.toFixed(0)}%</p>
           <Circle
             style={{ width: "50%" }}
             percent={percentage}
