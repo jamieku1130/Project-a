@@ -25,6 +25,7 @@ const enhancer = composeEnhancers(
   // other store enhancers if any
 );
 
-const store = createStore(rootReducer, initialState, enhancer);
+// const store = createStore(rootReducer, initialState, enhancer); develop only
+const store = createStore(rootReducer, initialState);
 
 export default store;
