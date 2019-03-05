@@ -9,6 +9,7 @@ import Chapters from "./Chapters";
 import Exam from "./Components/Exam";
 import Result from "./Result";
 import ReviewExam from "./ReviewExam";
+import About from "./About";
 
 const App = () => (
   <Provider store={store}>
@@ -20,6 +21,7 @@ const App = () => (
       <Exam path="/exam/:id" />
       <Result path="/result" />
       <ReviewExam path="/review-exam" />
+      <About path="/about" />
     </Router>
   </Provider>
 );

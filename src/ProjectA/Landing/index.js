@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 import { navigate } from "@reach/router";
 import logo from "../../java-awesome.svg";
 import javacafe from "../../java-cafe.svg";
@@ -7,6 +8,10 @@ const Landing = () => {
   return (
     <div className="landing">
       <header className="landing-header">
+        <div className="about">
+          <Link to="/about">About this</Link>
+        </div>
+
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div className="landing-main-section">
