@@ -28,7 +28,7 @@ const App = ({ elapsed, onToggleTimer }) => (
         <FontAwesomeIcon icon={faPauseCircle} size="lg" />
       </button>
     </div>
-    <h4>{format(elapsed)}</h4>
+    <h4 style={{ fontSize: "12px" }}>{format(elapsed)}</h4>
   </Timer>
 );
 

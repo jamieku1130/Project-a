@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Line } from "rc-progress";
 import { navigate } from "@reach/router";
 import styled from "styled-components";
+import Scroll from "react-scroll";
 import connect from "./connect";
 import QuestionCard from "../QuestionCard";
 import ExamAnswerCard from "../ExamAnswerCard";
@@ -35,6 +36,7 @@ const SubmitButton = styled.div`
 `;
 
 class Exam extends Component {
+  scroll = Scroll.animateScroll;
   state = {
     elapsed: 9000,
     pauseModal: false,
@@ -65,6 +67,7 @@ class Exam extends Component {
 
   submitAnswerHandler = id => {
     this.props.submitAnswer(id);
+    this.scroll.scrollToTop();
     if (this.props.index === this.props.total - 1) {
       navigate(`/result`, { state: { elapsed: this.state.elapsed } });
     }
